@@ -52,7 +52,9 @@
   .figrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;align-items:stretch}
   .figrow .fig{margin-top:0;display:flex;flex-direction:column}
   .figrow .fig figcaption{flex:1}
-  @media (max-width:620px){ .figrow{grid-template-columns:1fr} }
+  .figrow.sm{max-width:540px}
+  .figrow.sm figcaption{font-size:.78rem;padding:7px 11px}
+  @media (max-width:620px){ .figrow{grid-template-columns:1fr} .figrow.sm{max-width:100%} }
   .fig{margin:14px 0 0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
   .fig img{display:block;width:100%;height:auto}
   .fig figcaption{font-size:.82rem;color:var(--muted);padding:9px 13px;
@@ -213,6 +215,17 @@
       <li>음향 수집 <b>웹 도구</b>와 환경 측정용 <b>센서 장치를 직접 구성</b>해 동시 수집</li>
       <li>사전학습 임베딩 기반 특징 추출, 시계열 정렬, 다수 회귀 모델 비교</li>
     </ul>
+    <div class="figrow sm">
+      <figure class="fig">
+        <img src="assets/breath-ui.jpg" alt="직접 개발한 웹 기반 호흡음 수집 도구 화면" loading="lazy">
+        <figcaption>직접 만든 <b>웹 수집 도구</b> — 브라우저에서 호흡음을 녹음하고 파형과 예측 상태를 실시간 확인</figcaption>
+      </figure>
+      <figure class="fig">
+        <img src="assets/breath-hw.jpg" alt="온습도·CO2·미세먼지 센서와 Arduino로 구성한 환경 측정 장치" loading="lazy">
+        <figcaption><b>환경 측정 장치 구성</b> — 온습도·CO₂·미세먼지 센서를 Arduino에 연결해 음향과 동시에 수집</figcaption>
+      </figure>
+    </div>
+
     <div class="tags">
       <span class="tag">오디오 AI</span><span class="tag">임베딩 추출</span><span class="tag">시계열 회귀</span>
       <span class="tag">센서·하드웨어 구성</span><span class="tag">웹 개발</span><span class="tag">단독 수행</span>
