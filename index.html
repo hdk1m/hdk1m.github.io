@@ -49,6 +49,11 @@
   .tag{background:var(--chip);color:var(--muted);font-size:.79rem;
        padding:3px 10px;border-radius:99px;white-space:nowrap}
 
+  .fig{margin:14px 0 0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
+  .fig img{display:block;width:100%;height:auto}
+  .fig figcaption{font-size:.82rem;color:var(--muted);padding:9px 13px;
+                  border-top:1px solid var(--line);background:var(--card)}
+
   .rowlist{margin:0;padding:0;list-style:none}
   .rowlist li{padding:11px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;flex-wrap:wrap}
   .rowlist li:last-child{border-bottom:0}
@@ -111,6 +116,11 @@
       <li>피험자 독립 교차검증으로 <b>처음 보는 사용자에게도 일반화</b>되는지 평가</li>
       <li>단말에서 직접 추론하도록 구성해 <b>지연 시간·개인정보·인구통계 안정성</b>을 함께 검증</li>
     </ul>
+    <figure class="fig">
+      <img src="assets/fatigue-protocol.jpg" alt="실험 프로토콜 — 스마트폰 터치 과제와 피로 유발 절차를 번갈아 반복" loading="lazy">
+      <figcaption>실험 프로토콜 — 스마트폰 터치 과제 수행과 통제된 피로 유발 절차를 번갈아 반복하며 상태 변화를 측정</figcaption>
+    </figure>
+
     <div class="tags">
       <span class="tag">모바일 앱 개발</span><span class="tag">실험 설계</span><span class="tag">신호·시계열 분석</span>
       <span class="tag">머신러닝</span><span class="tag">설명가능 AI</span><span class="tag">온디바이스 추론</span>
