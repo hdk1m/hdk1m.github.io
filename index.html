@@ -49,8 +49,9 @@
   .tag{background:var(--chip);color:var(--muted);font-size:.79rem;
        padding:3px 10px;border-radius:99px;white-space:nowrap}
 
-  .figrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-  .figrow .fig{margin-top:0}
+  .figrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px;align-items:stretch}
+  .figrow .fig{margin-top:0;display:flex;flex-direction:column}
+  .figrow .fig figcaption{flex:1}
   @media (max-width:620px){ .figrow{grid-template-columns:1fr} }
   .fig{margin:14px 0 0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
   .fig img{display:block;width:100%;height:auto}
