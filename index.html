@@ -49,6 +49,9 @@
   .tag{background:var(--chip);color:var(--muted);font-size:.79rem;
        padding:3px 10px;border-radius:99px;white-space:nowrap}
 
+  .figrow{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+  .figrow .fig{margin-top:0}
+  @media (max-width:620px){ .figrow{grid-template-columns:1fr} }
   .fig{margin:14px 0 0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
   .fig img{display:block;width:100%;height:auto}
   .fig figcaption{font-size:.82rem;color:var(--muted);padding:9px 13px;
@@ -152,6 +155,17 @@
       <li>가상 이벤트 생성기를 두어 두 파트가 <b>서로 기다리지 않고 병행 개발</b>하도록 구성</li>
       <li>임상 요구 정의부터 시스템 아키텍처까지 총괄</li>
     </ul>
+    <div class="figrow">
+      <figure class="fig">
+        <img src="assets/glimaac-eog.jpg" alt="안구 전위(EOG) 계측 전극 배치도" loading="lazy">
+        <figcaption><b>입력</b> — 눈 주변과 이마에 부착한 전극으로 <b>안구 전위(EOG)</b>를 측정합니다. 시선이 움직이거나 눈을 감을 때 생기는 미세한 전위 변화를 신호로 받아, 환자가 말이나 손을 쓰지 않아도 의도를 전달할 수 있습니다.</figcaption>
+      </figure>
+      <figure class="fig">
+        <img src="assets/glimaac-ui.jpg" alt="발화 선택 인터페이스 초안 화면" loading="lazy">
+        <figcaption><b>출력</b> — 선택지를 화면에 띄우고, 시선과 깜빡임만으로 고르면 문장을 완성해 음성으로 출력합니다. 환자의 부담을 줄이기 위해 한 화면의 선택지 수를 최소화한 초안입니다.</figcaption>
+      </figure>
+    </div>
+
     <div class="tags">
       <span class="tag">팀 리딩</span><span class="tag">시스템 아키텍처</span><span class="tag">멀티모달 생체신호</span>
       <span class="tag">경량 딥러닝</span><span class="tag">LLM 응용</span><span class="tag">TTS</span><span class="tag">의·공학 협업</span>
