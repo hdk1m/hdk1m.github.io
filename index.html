@@ -22,17 +22,28 @@
   a{color:var(--accent);text-decoration:none}
   a:hover{text-decoration:underline}
 
-  header{padding:64px 0 40px;border-bottom:1px solid var(--line)}
-  h1{font-size:2rem;margin:0 0 6px;letter-spacing:-.02em}
-  .tagline{font-size:1.08rem;color:var(--fg);margin:0 0 18px;font-weight:500}
+  header{padding:60px 0 36px;border-bottom:1px solid var(--line)}
+  h1{font-size:2.05rem;margin:0 0 10px;letter-spacing:-.025em}
+  .tagline{font-size:1.12rem;color:var(--fg);margin:0 0 20px;font-weight:600;
+     letter-spacing:-.015em;max-width:38em}
   .meta{color:var(--muted);font-size:.93rem;margin:0}
   .meta span{white-space:nowrap}
   .sep{opacity:.45;margin:0 8px}
 
   section{padding:40px 0;border-bottom:1px solid var(--line)}
   section:last-of-type{border-bottom:0}
-  h2{font-size:1.18rem;margin:0 0 20px;letter-spacing:-.01em}
-  h2 .sub{font-weight:400;color:var(--muted);font-size:.86rem;margin-left:8px}
+  h2{font-size:1.18rem;margin:0 0 20px;letter-spacing:-.01em;
+     display:flex;align-items:baseline;gap:9px}
+  h2::before{content:"";width:3px;height:.95em;background:var(--accent);
+     border-radius:2px;flex:none;transform:translateY(.08em)}
+  h2 .sub{font-weight:400;color:var(--muted);font-size:.86rem}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:0 0 16px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:10px;
+        padding:15px 12px;text-align:center}
+  .stat .n{display:block;font-size:1.1rem;font-weight:650;letter-spacing:-.02em;
+        color:var(--accent);margin-bottom:4px;line-height:1.3}
+  .stat .l{display:block;font-size:.79rem;color:var(--muted);line-height:1.45}
 
   .lead{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:18px 20px;margin:0 0 4px}
   .lead ul{margin:0;padding-left:1.1em}
@@ -77,6 +88,7 @@
   @media (max-width:620px){
     header{padding:44px 0 30px} h1{font-size:1.6rem}
     .stack{grid-template-columns:1fr;gap:4px 0}
+    .stats{grid-template-columns:repeat(2,1fr);gap:8px}
     .stack dd{margin-bottom:12px}
     .rowlist .k{min-width:100%}
   }
@@ -100,12 +112,18 @@
 
 <section>
   <h2>한눈에</h2>
+  <div class="stats">
+    <div class="stat"><span class="n">IEEE TII</span><span class="l">제1저자 투고<br>심사 중</span></div>
+    <div class="stat"><span class="n">국가 R&amp;D</span><span class="l">ARPA-H<br>참여연구원</span></div>
+    <div class="stat"><span class="n">4년 2개월</span><span class="l">SW 개발<br>실무 경력</span></div>
+    <div class="stat"><span class="n">12개</span><span class="l">통합 ERP<br>프로젝트 수행</span></div>
+  </div>
   <div class="lead">
     <ul>
-      <li><b>사람을 센싱하는 AI</b> : 전용 장비 없이, 이미 쓰고 있는 기기로 사람의 상태를 추정하는 연구. 산업 현장의 작업자부터 환자·재실자까지.</li>
-      <li><b>연구에서 끝내지 않음</b> : 데이터 수집용 앱과 장치를 직접 만들고, 모델을 단말에서 돌아가게 하고, 서비스 백엔드까지 구현해 운영합니다.</li>
-      <li><b>현업과 개발 사이를 잇는 경험</b> : 공공기관 통합 ERP 12개 프로젝트에서 요구 정의부터 아키텍처 설계·프로젝트 관리·운영까지.</li>
-      <li><b>다분야 협업</b> : 의료진·임상 연구팀·기업 실무진·컨소시엄 기업과 함께 일하며 요구를 시스템 규격으로 옮겨왔습니다.</li>
+      <li><b>사람을 센싱하는 AI</b> : 전용 장비 없이 이미 쓰고 있는 기기로 상태를 추정합니다.</li>
+      <li><b>연구에서 끝내지 않습니다</b> : 수집 앱과 장치를 직접 만들고, 모델을 단말에서 돌리고, 백엔드까지 구현합니다.</li>
+      <li><b>현업과 개발을 잇습니다</b> : 요구 정의부터 설계·구현·운영까지 4년간 실무로 해왔습니다.</li>
+      <li><b>다분야 협업</b> : 의료진·임상 연구팀·기업 실무진과 요구를 시스템 규격으로 옮깁니다.</li>
     </ul>
   </div>
 </section>
