@@ -64,8 +64,9 @@
   .figrow .fig{margin-top:0;display:flex;flex-direction:column}
   .figrow .fig figcaption{flex:1}
   .figrow.sm{max-width:540px}
+  .figrow.wide{grid-template-columns:2.4fr 1fr}
   .figrow.sm figcaption{font-size:.78rem;padding:7px 11px}
-  @media (max-width:620px){ .figrow{grid-template-columns:1fr} .figrow.sm{max-width:100%} }
+  @media (max-width:620px){ .figrow,.figrow.wide{grid-template-columns:1fr} .figrow.sm{max-width:100%} }
   .fig{margin:14px 0 0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
   .fig img{display:block;width:100%;height:auto}
   .fig figcaption{font-size:.82rem;color:var(--muted);padding:9px 13px;
@@ -288,11 +289,22 @@
       <li><b>REST API 서버를 도메인별로 모듈화</b>하고 비동기 ORM·마이그레이션으로 다중 DB 지원</li>
       <li><b>컨테이너화</b>와 외부 연동 서버 <b>장애 격리</b>까지 구성해 실제 연구 과제에 투입</li>
       <li>음성 입출력, 세션 로깅 등 서비스 인프라 구축</li>
+      <li>실습 중 <b>비언어 신호(자세·표정 keypoint, 시선 이탈)</b>를 세션 단위로 기록해, 실습 후 되돌아볼 수 있는 모니터링 화면으로 제공</li>
     </ul>
     <figure class="fig" style="max-width:640px">
       <img src="assets/clinical-llm.jpg" alt="임상 협업 LLM 시뮬레이션 시스템의 이론학습 화면" loading="lazy">
       <figcaption><b>서비스 화면 (이론학습)</b> : 모듈별 레슨·퀴즈 진행률을 관리하고, 실습학습(LLM 대화 시뮬레이션)과 학습 기록으로 이어지는 구조. 화면 뒤의 API 서버와 DB를 단독으로 설계·구현</figcaption>
     </figure>
+    <div class="figrow wide">
+      <figure class="fig">
+        <img src="assets/clinical-attention.png" alt="실습 시간 구간별 시선 이탈 추이 그래프와 총 이탈 횟수, 누적 시간" loading="lazy">
+        <figcaption><b>집중도 요약</b> : 실습 시간을 10개 구간으로 나눠 시선 이탈 추이를 보여 주고, 총 이탈 횟수와 누적 시간을 함께 표시</figcaption>
+      </figure>
+      <figure class="fig">
+        <img src="assets/clinical-skeleton.png" alt="자세·표정 keypoint 스켈레톤 재생 화면" loading="lazy">
+        <figcaption><b>스켈레톤 재생</b> : 실습 중 기록한 자세·표정 keypoint를 시간 순으로 다시 재생</figcaption>
+      </figure>
+    </div>
     <div class="tags">
       <span class="tag">LLM 애플리케이션</span><span class="tag">RAG</span><span class="tag">백엔드 개발</span>
       <span class="tag">REST API 설계</span><span class="tag">DB 마이그레이션</span><span class="tag">Docker</span>
