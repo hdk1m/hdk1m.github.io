@@ -129,7 +129,7 @@
   .techbox summary{cursor:pointer;font-size:.82rem;color:var(--muted);padding:2px 0}
   .trow{display:flex;gap:10px;align-items:baseline;padding:5px 0;border-top:1px dashed var(--line)}
   .trow:first-of-type{border-top:0}
-  .tlabel{flex:none;width:118px;font-size:.78rem;color:var(--muted)}
+  .tlabel{flex:none;width:150px;font-size:.78rem;color:var(--muted)}
   .tchips{display:flex;flex-wrap:wrap;gap:5px}
   .tchip{font:inherit;font-size:.76rem;padding:2px 9px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer}
   .tchip:hover{border-color:var(--accent)}
@@ -198,19 +198,22 @@
       <button type="button" class="fchip" data-f="design">설계 · 리딩</button>
     </div>
     <details class="techbox">
-      <summary>기술로 보기 <span style="opacity:.7">(기술 35개 · 누르면 해당 기술을 쓴 카드만 표시)</span></summary>
-      <div class="trow"><span class="tlabel">언어 · 백엔드</span><span class="tchips"><button type="button" class="tchip" data-t="Java / Spring">Java / Spring</button><button type="button" class="tchip" data-t="MyBatis">MyBatis</button><button type="button" class="tchip" data-t="Python">Python</button><button type="button" class="tchip" data-t="FastAPI">FastAPI</button><button type="button" class="tchip" data-t="SQLAlchemy (async)">SQLAlchemy (async)</button><button type="button" class="tchip" data-t="Alembic">Alembic</button><button type="button" class="tchip" data-t="REST API 설계">REST API 설계</button><button type="button" class="tchip" data-t="JavaScript · ExtJS">JavaScript · ExtJS</button></span></div>
-      <div class="trow"><span class="tlabel">DB</span><span class="tchips"><button type="button" class="tchip" data-t="Oracle · PL/SQL">Oracle · PL/SQL</button><button type="button" class="tchip" data-t="PostgreSQL">PostgreSQL</button></span></div>
-      <div class="trow"><span class="tlabel">인프라</span><span class="tchips"><button type="button" class="tchip" data-t="Docker">Docker</button><button type="button" class="tchip" data-t="Linux">Linux</button><button type="button" class="tchip" data-t="GitLab CI">GitLab CI</button><button type="button" class="tchip" data-t="Git">Git</button><button type="button" class="tchip" data-t="Jenkins · SVN">Jenkins · SVN</button><button type="button" class="tchip" data-t="MQTT">MQTT</button></span></div>
-      <div class="trow"><span class="tlabel">AI · 데이터</span><span class="tchips"><button type="button" class="tchip" data-t="PyTorch">PyTorch</button><button type="button" class="tchip" data-t="scikit-learn">scikit-learn</button><button type="button" class="tchip" data-t="LightGBM / XGBoost">LightGBM / XGBoost</button><button type="button" class="tchip" data-t="SHAP">SHAP</button><button type="button" class="tchip" data-t="시계열·신호 분석">시계열·신호 분석</button><button type="button" class="tchip" data-t="실험 설계·통계 검증">실험 설계·통계 검증</button></span></div>
-      <div class="trow"><span class="tlabel">LLM</span><span class="tchips"><button type="button" class="tchip" data-t="LLM 애플리케이션">LLM 애플리케이션</button><button type="button" class="tchip" data-t="RAG">RAG</button><button type="button" class="tchip" data-t="AI Agent">AI Agent</button><button type="button" class="tchip" data-t="프롬프트·상태 제어 설계">프롬프트·상태 제어 설계</button><button type="button" class="tchip" data-t="생성형 AI 활용 개발">생성형 AI 활용 개발</button></span></div>
-      <div class="trow"><span class="tlabel">모바일 · 디바이스</span><span class="tchips"><button type="button" class="tchip" data-t="Kotlin">Kotlin</button><button type="button" class="tchip" data-t="Android">Android</button><button type="button" class="tchip" data-t="Wear OS">Wear OS</button><button type="button" class="tchip" data-t="Jetpack Compose">Jetpack Compose</button><button type="button" class="tchip" data-t="Samsung Health Sensor SDK">Samsung Health Sensor SDK</button><button type="button" class="tchip" data-t="온디바이스 추론">온디바이스 추론</button><button type="button" class="tchip" data-t="Arduino 센서 구성">Arduino 센서 구성</button><button type="button" class="tchip" data-t="데이터 수집 도구 제작">데이터 수집 도구 제작</button></span></div>
+      <summary>기술로 보기 <span style="opacity:.7">(기술 39개 · 누르면 해당 기술을 쓴 카드만 표시)</span></summary>
+      <div class="trow"><span class="tlabel">언어</span><span class="tchips"><button type="button" class="tchip" data-t="Java">Java</button><button type="button" class="tchip" data-t="Kotlin">Kotlin</button><button type="button" class="tchip" data-t="Python">Python</button><button type="button" class="tchip" data-t="JavaScript">JavaScript</button><button type="button" class="tchip" data-t="SQL · PL/SQL">SQL · PL/SQL</button></span></div>
+      <div class="trow"><span class="tlabel">백엔드</span><span class="tchips"><button type="button" class="tchip" data-t="Spring">Spring</button><button type="button" class="tchip" data-t="MyBatis">MyBatis</button><button type="button" class="tchip" data-t="FastAPI">FastAPI</button><button type="button" class="tchip" data-t="SQLAlchemy">SQLAlchemy</button><button type="button" class="tchip" data-t="Alembic">Alembic</button><button type="button" class="tchip" data-t="REST API 설계">REST API 설계</button></span></div>
+      <div class="trow"><span class="tlabel">DB</span><span class="tchips"><button type="button" class="tchip" data-t="Oracle">Oracle</button><button type="button" class="tchip" data-t="PostgreSQL">PostgreSQL</button></span></div>
+      <div class="trow"><span class="tlabel">인프라 · DevOps</span><span class="tchips"><button type="button" class="tchip" data-t="Docker">Docker</button><button type="button" class="tchip" data-t="Linux">Linux</button><button type="button" class="tchip" data-t="GitLab CI">GitLab CI</button><button type="button" class="tchip" data-t="Jenkins">Jenkins</button><button type="button" class="tchip" data-t="Git">Git</button><button type="button" class="tchip" data-t="SVN">SVN</button></span></div>
+      <div class="trow"><span class="tlabel">클라이언트 (웹 · 모바일)</span><span class="tchips"><button type="button" class="tchip" data-t="ExtJS">ExtJS</button><button type="button" class="tchip" data-t="Android">Android</button><button type="button" class="tchip" data-t="Wear OS">Wear OS</button><button type="button" class="tchip" data-t="Jetpack Compose">Jetpack Compose</button><button type="button" class="tchip" data-t="Samsung Health Sensor SDK">Samsung Health Sensor SDK</button></span></div>
+      <div class="trow"><span class="tlabel">IoT · 센서</span><span class="tchips"><button type="button" class="tchip" data-t="MQTT">MQTT</button><button type="button" class="tchip" data-t="Arduino">Arduino</button><button type="button" class="tchip" data-t="센서 데이터 수집">센서 데이터 수집</button></span></div>
+      <div class="trow"><span class="tlabel">AI · 데이터</span><span class="tchips"><button type="button" class="tchip" data-t="PyTorch">PyTorch</button><button type="button" class="tchip" data-t="scikit-learn">scikit-learn</button><button type="button" class="tchip" data-t="LightGBM / XGBoost">LightGBM / XGBoost</button><button type="button" class="tchip" data-t="SHAP">SHAP</button><button type="button" class="tchip" data-t="시계열·신호 분석">시계열·신호 분석</button><button type="button" class="tchip" data-t="온디바이스 추론">온디바이스 추론</button></span></div>
+      <div class="trow"><span class="tlabel">LLM</span><span class="tchips"><button type="button" class="tchip" data-t="LLM 애플리케이션">LLM 애플리케이션</button><button type="button" class="tchip" data-t="RAG">RAG</button><button type="button" class="tchip" data-t="AI Agent">AI Agent</button><button type="button" class="tchip" data-t="프롬프트·상태 제어 설계">프롬프트·상태 제어 설계</button></span></div>
+      <div class="trow"><span class="tlabel">개발 방식</span><span class="tchips"><button type="button" class="tchip" data-t="실험 설계·통계 검증">실험 설계·통계 검증</button><button type="button" class="tchip" data-t="생성형 AI 활용 개발">생성형 AI 활용 개발</button></span></div>
     </details>
     <input type="search" id="q" placeholder="키워드 검색 (예: Kotlin, MQTT, LLM, SSO)" aria-label="키워드 검색">
     <p class="count" id="cnt" aria-live="polite"></p>
   </div>
   <div class="grid">
-  <details data-tech="Java / Spring|MyBatis|Oracle · PL/SQL|JavaScript · ExtJS|REST API 설계|Linux|Jenkins · SVN" class="tile" data-cat="backend design">
+  <details data-tech="Java|SQL · PL/SQL|JavaScript|Spring|MyBatis|REST API 설계|Oracle|ExtJS|Linux|Jenkins|SVN" class="tile" data-cat="backend design">
     <summary>
       <div class="thumb photo-sign"><img src="assets/itmate.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -243,7 +246,7 @@
     </div>
     </div>
   </details>
-  <details data-tech="Python|FastAPI|SQLAlchemy (async)|Alembic|PostgreSQL|REST API 설계|Docker|Linux|GitLab CI|Git|생성형 AI 활용 개발" class="tile" data-cat="backend">
+  <details data-tech="Python|FastAPI|SQLAlchemy|Alembic|REST API 설계|PostgreSQL|Docker|Linux|GitLab CI|Git|생성형 AI 활용 개발" class="tile" data-cat="backend">
     <summary>
       <div class="thumb"><img src="assets/lab-server.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -270,7 +273,7 @@
     </div>
     </div>
   </details>
-  <details data-tech="Python|FastAPI|SQLAlchemy (async)|Alembic|REST API 설계|Docker|Git|LLM 애플리케이션|RAG|프롬프트·상태 제어 설계" class="tile" data-cat="backend ai health">
+  <details data-tech="Python|FastAPI|SQLAlchemy|Alembic|REST API 설계|Docker|Git|LLM 애플리케이션|RAG|프롬프트·상태 제어 설계" class="tile" data-cat="backend ai health">
     <summary>
       <div class="thumb"><img src="assets/clinical-llm.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -312,7 +315,7 @@
     </div>
     </div>
   </details>
-  <details data-tech="Kotlin|Android|Wear OS|Jetpack Compose|Samsung Health Sensor SDK|데이터 수집 도구 제작" class="tile" data-cat="app device health">
+  <details data-tech="Kotlin|Android|Wear OS|Jetpack Compose|Samsung Health Sensor SDK|센서 데이터 수집" class="tile" data-cat="app device health">
     <summary>
       <div class="thumb"><img src="assets/watch-app.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -343,7 +346,7 @@
     </div>
     </div>
   </details>
-  <details data-tech="Python|scikit-learn|SHAP|시계열·신호 분석|온디바이스 추론|Android|Kotlin|실험 설계·통계 검증" class="tile" data-cat="ai app health">
+  <details data-tech="Java|Kotlin|Python|Android|scikit-learn|SHAP|시계열·신호 분석|온디바이스 추론|실험 설계·통계 검증" class="tile" data-cat="ai app health">
     <summary>
       <div class="thumb"><img src="assets/android-app.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -409,7 +412,7 @@
     </div>
     </div>
   </details>
-  <details data-tech="시계열·신호 분석|LLM 애플리케이션" class="tile" data-cat="ai health device design">
+  <details data-tech="시계열·신호 분석|LLM 애플리케이션|센서 데이터 수집" class="tile" data-cat="ai health device design">
     <summary>
       <div class="thumb photo-pitch"><img src="assets/glimaac-pitch.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -455,7 +458,7 @@
     </div>
     </div>
   </details>
-  <details data-tech="Python|PyTorch|scikit-learn|시계열·신호 분석|MQTT|Arduino 센서 구성|데이터 수집 도구 제작" class="tile" data-cat="device ai">
+  <details data-tech="Python|PyTorch|scikit-learn|시계열·신호 분석|MQTT|Arduino|센서 데이터 수집" class="tile" data-cat="device ai">
     <summary>
       <div class="thumb"><img src="assets/breath-hw.jpg" alt="" loading="lazy"></div>
       <div class="tb">
