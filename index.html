@@ -121,6 +121,19 @@
   .count{color:var(--muted);font-size:.8rem;margin:8px 0 0}
   @media (max-width:620px){ .meta span{white-space:normal} h2{flex-wrap:wrap} h2 .sub{flex-basis:100%} }
   @media print{ .filters,.more{display:none} }
+  .thumb.logo{background:#fff}
+  .thumb.logo img{object-fit:contain;padding:22px 26px}
+  .techbox{margin:4px 0 12px;border:1px solid var(--line);border-radius:10px;padding:8px 12px;background:var(--card)}
+  .techbox summary{cursor:pointer;font-size:.82rem;color:var(--muted);padding:2px 0}
+  .trow{display:flex;gap:10px;align-items:baseline;padding:5px 0;border-top:1px dashed var(--line)}
+  .trow:first-of-type{border-top:0}
+  .tlabel{flex:none;width:118px;font-size:.78rem;color:var(--muted)}
+  .tchips{display:flex;flex-wrap:wrap;gap:5px}
+  .tchip{font:inherit;font-size:.76rem;padding:2px 9px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--fg);cursor:pointer}
+  .tchip:hover{border-color:var(--accent)}
+  .tchip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  .tchip .n{opacity:.6;margin-left:3px}
+  @media (max-width:620px){ .trow{flex-direction:column;gap:4px} .tlabel{width:auto} }
   .rowlist{margin:0;padding:0;list-style:none}
   .rowlist li{padding:11px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;flex-wrap:wrap}
   .rowlist li:last-child{border-bottom:0}
@@ -182,11 +195,20 @@
       <button type="button" class="fchip" data-f="health">헬스케어</button>
       <button type="button" class="fchip" data-f="design">설계 · 리딩</button>
     </div>
+    <details class="techbox">
+      <summary>기술로 보기 <span style="opacity:.7">(기술 35개 · 누르면 해당 기술을 쓴 카드만 표시)</span></summary>
+      <div class="trow"><span class="tlabel">언어 · 백엔드</span><span class="tchips"><button type="button" class="tchip" data-t="Java / Spring">Java / Spring</button><button type="button" class="tchip" data-t="MyBatis">MyBatis</button><button type="button" class="tchip" data-t="Python">Python</button><button type="button" class="tchip" data-t="FastAPI">FastAPI</button><button type="button" class="tchip" data-t="SQLAlchemy (async)">SQLAlchemy (async)</button><button type="button" class="tchip" data-t="Alembic">Alembic</button><button type="button" class="tchip" data-t="REST API 설계">REST API 설계</button><button type="button" class="tchip" data-t="JavaScript · ExtJS">JavaScript · ExtJS</button></span></div>
+      <div class="trow"><span class="tlabel">DB</span><span class="tchips"><button type="button" class="tchip" data-t="Oracle · PL/SQL">Oracle · PL/SQL</button><button type="button" class="tchip" data-t="PostgreSQL">PostgreSQL</button></span></div>
+      <div class="trow"><span class="tlabel">인프라</span><span class="tchips"><button type="button" class="tchip" data-t="Docker">Docker</button><button type="button" class="tchip" data-t="Linux">Linux</button><button type="button" class="tchip" data-t="GitLab CI">GitLab CI</button><button type="button" class="tchip" data-t="Git">Git</button><button type="button" class="tchip" data-t="Jenkins · SVN">Jenkins · SVN</button><button type="button" class="tchip" data-t="MQTT">MQTT</button></span></div>
+      <div class="trow"><span class="tlabel">AI · 데이터</span><span class="tchips"><button type="button" class="tchip" data-t="PyTorch">PyTorch</button><button type="button" class="tchip" data-t="scikit-learn">scikit-learn</button><button type="button" class="tchip" data-t="LightGBM / XGBoost">LightGBM / XGBoost</button><button type="button" class="tchip" data-t="SHAP">SHAP</button><button type="button" class="tchip" data-t="시계열·신호 분석">시계열·신호 분석</button><button type="button" class="tchip" data-t="실험 설계·통계 검증">실험 설계·통계 검증</button></span></div>
+      <div class="trow"><span class="tlabel">LLM</span><span class="tchips"><button type="button" class="tchip" data-t="LLM 애플리케이션">LLM 애플리케이션</button><button type="button" class="tchip" data-t="RAG">RAG</button><button type="button" class="tchip" data-t="AI Agent">AI Agent</button><button type="button" class="tchip" data-t="프롬프트·상태 제어 설계">프롬프트·상태 제어 설계</button><button type="button" class="tchip" data-t="생성형 AI 활용 개발">생성형 AI 활용 개발</button></span></div>
+      <div class="trow"><span class="tlabel">모바일 · 디바이스</span><span class="tchips"><button type="button" class="tchip" data-t="Kotlin">Kotlin</button><button type="button" class="tchip" data-t="Android">Android</button><button type="button" class="tchip" data-t="Wear OS">Wear OS</button><button type="button" class="tchip" data-t="Jetpack Compose">Jetpack Compose</button><button type="button" class="tchip" data-t="Samsung Health Sensor SDK">Samsung Health Sensor SDK</button><button type="button" class="tchip" data-t="온디바이스 추론">온디바이스 추론</button><button type="button" class="tchip" data-t="Arduino 센서 구성">Arduino 센서 구성</button><button type="button" class="tchip" data-t="데이터 수집 도구 제작">데이터 수집 도구 제작</button></span></div>
+    </details>
     <input type="search" id="q" placeholder="키워드 검색 (예: Kotlin, MQTT, LLM, SSO)" aria-label="키워드 검색">
     <p class="count" id="cnt" aria-live="polite"></p>
   </div>
   <div class="grid">
-  <details class="tile" data-cat="backend design">
+  <details data-tech="Java / Spring|MyBatis|Oracle · PL/SQL|JavaScript · ExtJS|REST API 설계|Linux|Jenkins · SVN" class="tile" data-cat="backend design">
     <summary>
       <div class="thumb photo-sign"><img src="assets/itmate.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -219,7 +241,7 @@
     </div>
     </div>
   </details>
-  <details class="tile" data-cat="backend">
+  <details data-tech="Python|FastAPI|SQLAlchemy (async)|Alembic|PostgreSQL|REST API 설계|Docker|Linux|GitLab CI|Git|생성형 AI 활용 개발" class="tile" data-cat="backend">
     <summary>
       <div class="thumb"><img src="assets/lab-server.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -246,7 +268,7 @@
     </div>
     </div>
   </details>
-  <details class="tile" data-cat="backend ai health">
+  <details data-tech="Python|FastAPI|SQLAlchemy (async)|Alembic|REST API 설계|Docker|Git|LLM 애플리케이션|RAG|프롬프트·상태 제어 설계" class="tile" data-cat="backend ai health">
     <summary>
       <div class="thumb"><img src="assets/clinical-llm.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -277,7 +299,7 @@
     </div>
     </div>
   </details>
-  <details class="tile" data-cat="app device health">
+  <details data-tech="Kotlin|Android|Wear OS|Jetpack Compose|Samsung Health Sensor SDK|데이터 수집 도구 제작" class="tile" data-cat="app device health">
     <summary>
       <div class="thumb"><img src="assets/watch-app.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -308,7 +330,7 @@
     </div>
     </div>
   </details>
-  <details class="tile" data-cat="ai app health">
+  <details data-tech="Python|scikit-learn|SHAP|시계열·신호 분석|온디바이스 추론|Android|Kotlin|실험 설계·통계 검증" class="tile" data-cat="ai app health">
     <summary>
       <div class="thumb"><img src="assets/android-app.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -345,9 +367,9 @@
     </div>
     </div>
   </details>
-  <details class="tile" data-cat="ai health design">
+  <details data-tech="AI Agent" class="tile" data-cat="ai health design">
     <summary>
-      <div class="thumb icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6l15 6v10c0 10-6.5 17-15 20C15.5 39 9 32 9 22V12z"/><path d="M17 24l5 5 9-10"/></svg></div>
+      <div class="thumb logo"><img src="assets/arpah-logo.png" alt="K-헬스미래추진단 한국형 ARPA-H 프로젝트" loading="lazy"></div>
       <div class="tb">
         <span class="kicker">Healthcare AI · AI Safety</span>
         <h3>국가 R&amp;D : 지역필수의료 AI 플랫폼</h3>
@@ -370,7 +392,7 @@
     </div>
     </div>
   </details>
-  <details class="tile" data-cat="ai health device design">
+  <details data-tech="시계열·신호 분석|LLM 애플리케이션" class="tile" data-cat="ai health device design">
     <summary>
       <div class="thumb"><img src="assets/glimaac-eog.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -406,7 +428,7 @@
     </div>
     </div>
   </details>
-  <details class="tile" data-cat="device ai">
+  <details data-tech="Python|PyTorch|scikit-learn|시계열·신호 분석|MQTT|Arduino 센서 구성|데이터 수집 도구 제작" class="tile" data-cat="device ai">
     <summary>
       <div class="thumb"><img src="assets/breath-hw.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -441,7 +463,7 @@
     </div>
     </div>
   </details>
-  <details class="tile" data-cat="ai">
+  <details data-tech="Python|scikit-learn|LightGBM / XGBoost" class="tile" data-cat="ai">
     <summary>
       <div class="thumb graph"><img src="assets/paint-profile.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -471,24 +493,6 @@
     </div>
   </details>
   </div>
-</section>
-
-<section>
-  <h2>기술</h2>
-  <dl class="stack">
-    <dt>AI / 데이터</dt>
-    <dd><span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">scikit-learn</span><span class="tag">LightGBM / XGBoost</span><span class="tag">시계열·신호 분석</span><span class="tag">SHAP</span></dd>
-    <dt>LLM</dt>
-    <dd><span class="tag">LLM 애플리케이션</span><span class="tag">RAG</span><span class="tag">AI Agent</span><span class="tag">프롬프트·상태 제어 설계</span></dd>
-    <dt>백엔드</dt>
-    <dd><span class="tag">FastAPI</span><span class="tag">SQLAlchemy (async)</span><span class="tag">Alembic</span><span class="tag">PostgreSQL</span><span class="tag">Java / Spring</span><span class="tag">REST API 설계</span></dd>
-    <dt>인프라 · 협업</dt>
-    <dd><span class="tag">Docker / docker-compose</span><span class="tag">Linux</span><span class="tag">GitLab CI</span><span class="tag">GCP</span><span class="tag">Git</span><span class="tag">MQTT</span><span class="tag">생성형 AI 활용 개발</span></dd>
-    <dt>모바일 · 엣지</dt>
-    <dd><span class="tag">Kotlin</span><span class="tag">Android</span><span class="tag">Wear OS</span><span class="tag">Jetpack Compose</span><span class="tag">Samsung Health Sensor SDK</span><span class="tag">온디바이스 추론</span></dd>
-    <dt>기타</dt>
-    <dd><span class="tag">Arduino 센서 구성</span><span class="tag">실험 설계·통계 검증</span><span class="tag">데이터 수집 도구 자체 제작</span></dd>
-  </dl>
 </section>
 
 <section>
@@ -531,19 +535,33 @@
   var bar=document.getElementById('filters'); if(!bar) return; bar.hidden=false;
   var tiles=[].slice.call(document.querySelectorAll('details.tile'));
   var chips=[].slice.call(bar.querySelectorAll('.fchip'));
-  var q=document.getElementById('q'), cnt=document.getElementById('cnt'), f='all';
+  var tchips=[].slice.call(bar.querySelectorAll('.tchip'));
+  var q=document.getElementById('q'), cnt=document.getElementById('cnt'), f='all', tech='';
+  function techs(d){ return (d.dataset.tech||'').split('|'); }
+  tchips.forEach(function(c){
+    var n=tiles.filter(function(d){return techs(d).indexOf(c.dataset.t)>=0;}).length;
+    var b=document.createElement('span'); b.className='n'; b.textContent=n; c.appendChild(b);
+  });
   function apply(){
     var s=q.value.trim().toLowerCase(), n=0;
     tiles.forEach(function(d){
       var okC = f==='all' || (' '+d.dataset.cat+' ').indexOf(' '+f+' ')>=0;
-      var okQ = !s || d.textContent.toLowerCase().indexOf(s)>=0;
-      var show=okC&&okQ; d.classList.toggle('hide',!show); if(show) n++;
+      var okT = !tech || techs(d).indexOf(tech)>=0;
+      var okQ = !s || (d.textContent+' '+(d.dataset.tech||'')).toLowerCase().indexOf(s)>=0;
+      var show=okC&&okT&&okQ; d.classList.toggle('hide',!show); if(show) n++;
     });
-    cnt.textContent = (f==='all'&&!s) ? '' : (n ? n+'개 카드' : '해당하는 카드가 없습니다');
+    var on=(f!=='all'||tech||s);
+    cnt.textContent = !on ? '' : (n ? n+'개 카드' : '해당하는 카드가 없습니다');
   }
   chips.forEach(function(c){ c.addEventListener('click',function(){
     chips.forEach(function(x){x.classList.remove('on'); x.setAttribute('aria-pressed','false');});
     c.classList.add('on'); c.setAttribute('aria-pressed','true'); f=c.dataset.f; apply(); }); });
+  tchips.forEach(function(c){ c.addEventListener('click',function(){
+    var same = tech===c.dataset.t;
+    tchips.forEach(function(x){x.classList.remove('on'); x.setAttribute('aria-pressed','false');});
+    tech = same ? '' : c.dataset.t;
+    if(!same){ c.classList.add('on'); c.setAttribute('aria-pressed','true'); }
+    apply(); }); });
   q.addEventListener('input',apply);
 })();
 window.addEventListener('beforeprint',function(){document.querySelectorAll('details.tile').forEach(function(d){d.open=true;});});
