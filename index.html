@@ -92,6 +92,7 @@
     .stack dd{margin-bottom:12px}
     .rowlist .k{min-width:100%}
   }
+  @media print{ .fig,.figrow,figure,.tags,.stats{break-inside:avoid;page-break-inside:avoid} h2,h3{break-after:avoid;page-break-after:avoid} }
 </style>
 </head>
 <body>
@@ -136,7 +137,7 @@
     <p class="when">2025.08 ~ 진행 중 · 제1저자 · IEEE Transactions on Industrial Informatics 투고(심사 중)</p>
     <p>기존 생체신호 센서는 전극 부착과 비용, 착용 부담 때문에 현장에 정착하기 어렵습니다. 이미 손에 있는 <b>상용 스마트폰의 터치스크린</b>을 상태 센서로 쓰는 접근을 제안하고, 실험 설계부터 모델 개발과 배포 검증까지 수행했습니다.</p>
     <ul>
-      <li>데이터 수집용 <b>스마트폰 터치 과제 앱을 직접 개발</b>하고 통제된 실험 프로토콜을 설계</li>
+      <li>데이터 수집용 <b>스마트폰 터치 과제 앱(Java · Kotlin)을 공동으로 고도화</b>하고 통제된 실험 프로토콜을 설계</li>
       <li>피험자 독립 교차검증으로 <b>처음 보는 사용자에게도 일반화</b>되는지 평가</li>
       <li>단말에서 직접 추론하도록 구성해 <b>지연 시간·개인정보·인구통계 안정성</b>을 함께 검증</li>
     </ul>
@@ -144,6 +145,12 @@
       <img src="assets/fatigue-protocol.jpg" alt="실험 프로토콜 : 스마트폰 터치 과제와 피로 유발 절차를 번갈아 반복" loading="lazy">
       <figcaption>실험 프로토콜 : 스마트폰 터치 과제 수행과 통제된 피로 유발 절차를 번갈아 반복하며 상태 변화를 측정</figcaption>
     </figure>
+    <div class="figrow sm">
+      <figure class="fig">
+        <img src="assets/android-app.jpg" alt="스마트폰 멀티탭 측정 과제 앱 실행 화면" loading="lazy">
+        <figcaption><b>측정 과제 앱 (Android)</b> : 화면에 나타나는 목표를 연속으로 터치하는 과제를 회차·시행 단위로 진행하며, 터치 위치와 시간 정보를 기록</figcaption>
+      </figure>
+    </div>
 
     <div class="tags">
       <span class="tag">모바일 앱 개발</span><span class="tag">실험 설계</span><span class="tag">신호·시계열 분석</span>
@@ -228,7 +235,28 @@
   </div>
 
   <div class="card">
-    <h3>제조 공정 데이터 분석 AI <span style="font-weight:400;color:var(--muted);font-size:.9rem">(산학협력 연구원)</span></h3>
+    <h3>갤럭시 워치 생체신호 수집 앱 <span style="font-weight:400;color:var(--muted);font-size:.9rem">(Wear OS · 단독 개발)</span></h3>
+    <p class="when">연구용 · 진행 중 · Galaxy Watch (Wear OS)</p>
+    <p>연구에 필요한 생체신호를 일상 환경에서 장시간 모으기 위해 갤럭시 워치 앱을 혼자 개발했습니다. 실제 실험에 쓰면서 고치기를 반복해 <b>28차 버전</b>까지 개선했습니다.</p>
+    <ul>
+      <li>화면이 꺼져도 수집이 이어지도록 <b>포그라운드 서비스</b>로 심박·체온·움직임을 장시간 수집 (Samsung Health Sensor SDK)</li>
+      <li>참가자가 손목에서 바로 <b>자세·활동·동석 상태를 기록</b>하고 적용 시점을 함께 남겨, 센서 신호와 상태 라벨을 같은 시간축에 맞추도록 설계</li>
+      <li>수집 데이터를 <b>서버로 전송</b>하는 경로와 <b>기기 상태 확인 화면</b>을 두어 수집 중 이상을 현장에서 바로 확인</li>
+    </ul>
+    <div class="figrow sm">
+      <figure class="fig">
+        <img src="assets/watch-app.jpg" alt="갤럭시 워치 앱의 상태 기록 화면" loading="lazy">
+        <figcaption><b>상태 기록 화면</b> : 자세·활동·동석 상태를 원형 화면에서 바로 고르고, 그 상태가 적용되는 시점을 함께 기록</figcaption>
+      </figure>
+    </div>
+    <div class="tags">
+      <span class="tag">Wear OS</span><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Samsung Health Sensor SDK</span>
+      <span class="tag">포그라운드 서비스</span><span class="tag">디바이스–서버 연동</span><span class="tag">단독 개발</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>제조 공정 데이터 분석 AI<span style="font-weight:400;color:var(--muted);font-size:.9rem">(산학협력 연구원)</span></h3>
     <p class="when">2026.04 ~ 2026.10 · 기업 공동 과제</p>
     <p>공정 조건과 품질 프로파일의 관계를 예측·역예측하는 과제입니다. 데이터 파이프라인부터 모델링·검증·보고까지 분석 실무를 단독 수행했습니다.</p>
     <ul>
