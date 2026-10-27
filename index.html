@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>김현동 | AI 연구 · 시스템 엔지니어링</title>
-<meta name="description" content="사람의 상태를 관찰하고 추정하는 AI를, 실제로 돌아가는 시스템으로 만듭니다. 한양대 인공지능학과 석사과정 · 前 공공 SI Application Architect 4년.">
+<meta name="description" content="김현동 포트폴리오 · 한양대 인공지능학과 석사과정 · 前 SW 개발자(공공기관 ERP 4년 2개월)">
 <style>
   :root{
     --bg:#ffffff; --fg:#1a1d21; --muted:#5b6470; --line:#e3e7ec;
@@ -71,6 +71,53 @@
   .fig figcaption{font-size:.82rem;color:var(--muted);padding:9px 13px;
                   border-top:1px solid var(--line);background:var(--card)}
 
+
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+  .tile{border:1px solid var(--line);border-radius:12px;background:var(--card);overflow:hidden;
+        transition:box-shadow .15s,border-color .15s}
+  .tile:hover{border-color:var(--accent);box-shadow:0 4px 14px rgba(0,0,0,.07)}
+  .tile summary{list-style:none;cursor:pointer;display:flex;flex-direction:column;height:100%}
+  .tile summary::-webkit-details-marker{display:none}
+  .tile summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:12px}
+  .thumb{height:150px;background:var(--chip);overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .thumb.icon svg{width:62px;height:62px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+  .tb{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
+  .kicker{font-size:.74rem;font-weight:650;color:var(--accent);letter-spacing:.01em;margin-bottom:4px}
+  .tile h3{font-size:1rem;margin:0 0 3px;letter-spacing:-.01em;line-height:1.4}
+  .tile .when{color:var(--muted);font-size:.8rem;margin:0 0 10px;line-height:1.5}
+  .kws{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+  .kw{font-size:.74rem;padding:2px 9px;border-radius:99px;border:1px solid var(--line);background:var(--bg);color:var(--fg);white-space:nowrap}
+  .more{margin-top:auto;font-size:.78rem;color:var(--muted)}
+  .more::after{content:" \25BE"}
+  .tile[open]{grid-column:1/-1;border-color:var(--accent)}
+  .tile[open] summary{flex-direction:row}
+  .tile[open] .thumb{width:220px;height:auto;min-height:150px;flex:none}
+  .tile[open] .more::after{content:" \25B4"}
+  .tile[open] .more{font-size:0}
+  .tile[open] .more::before{content:"접기";font-size:.78rem}
+  .detail{padding:4px 20px 20px;border-top:1px solid var(--line)}
+  .detail .when{display:none}
+  .detail p{margin:14px 0 10px}
+  .detail ul{margin:0 0 12px;padding-left:1.1em}
+  .detail li{margin:5px 0}
+  @media (max-width:620px){ .tile[open] summary{flex-direction:column} .tile[open] .thumb{width:100%;height:150px} }
+
+  .grid{grid-auto-flow:dense}
+  .tile[open] summary{height:auto}
+  .tile.hide{display:none}
+  .filters{margin:0 0 16px}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .fchip{font:inherit;font-size:.82rem;padding:5px 13px;border-radius:99px;border:1px solid var(--line);
+         background:var(--bg);color:var(--fg);cursor:pointer}
+  .fchip:hover{border-color:var(--accent)}
+  .fchip.on{background:var(--accent);border-color:var(--accent);color:#fff}
+  #q{width:100%;max-width:420px;font:inherit;font-size:.88rem;padding:8px 12px;border:1px solid var(--line);
+     border-radius:8px;background:var(--bg);color:var(--fg)}
+  #q:focus{outline:2px solid var(--accent);outline-offset:0;border-color:transparent}
+  .count{color:var(--muted);font-size:.8rem;margin:8px 0 0}
+  @media (max-width:620px){ .meta span{white-space:normal} h2{flex-wrap:wrap} h2 .sub{flex-basis:100%} }
+  @media print{ .filters,.more{display:none} }
   .rowlist{margin:0;padding:0;list-style:none}
   .rowlist li{padding:11px 0;border-bottom:1px solid var(--line);display:flex;gap:14px;flex-wrap:wrap}
   .rowlist li:last-child{border-bottom:0}
@@ -92,7 +139,7 @@
     .stack dd{margin-bottom:12px}
     .rowlist .k{min-width:100%}
   }
-  @media print{ .fig,.figrow,figure,.tags,.stats{break-inside:avoid;page-break-inside:avoid} h2,h3{break-after:avoid;page-break-after:avoid} }
+  @media print{ .tile{break-inside:auto} .tile summary{break-inside:avoid} .fig,.figrow,figure,.tags,.stats{break-inside:avoid;page-break-inside:avoid} h2,h3{break-after:avoid;page-break-after:avoid} }
 </style>
 </head>
 <body>
@@ -100,7 +147,6 @@
 
 <header>
   <h1>김현동 <span style="font-weight:400;color:var(--muted);font-size:1rem">Hyundong Kim</span></h1>
-  <p class="tagline">사람의 상태를 관찰하고 추정하는 AI를, 실제로 돌아가는 시스템으로 만듭니다.</p>
   <p class="meta">
     <span>한양대학교 인공지능학과 석사과정</span><span class="sep">·</span>
     <span>2027년 2월 졸업 예정</span><span class="sep">·</span>
@@ -119,21 +165,154 @@
     <div class="stat"><span class="n">4년 2개월</span><span class="l">SW 개발<br>실무 경력</span></div>
     <div class="stat"><span class="n">12개</span><span class="l">통합 ERP<br>프로젝트 수행</span></div>
   </div>
-  <div class="lead">
-    <ul>
-      <li><b>사람을 센싱하는 AI</b> : 전용 장비 없이 이미 쓰고 있는 기기로 상태를 추정합니다.</li>
-      <li><b>연구에서 끝내지 않습니다</b> : 수집 앱과 장치를 직접 만들고, 모델을 단말에서 돌리고, 백엔드까지 구현합니다.</li>
-      <li><b>현업과 개발을 잇습니다</b> : 요구 정의부터 설계·구현·운영까지 4년간 실무로 해왔습니다.</li>
-      <li><b>다분야 협업</b> : 의료진·임상 연구팀·기업 실무진과 요구를 시스템 규격으로 옮깁니다.</li>
-    </ul>
-  </div>
 </section>
 
 <section>
-  <h2>연구 · 프로젝트 <span class="sub">최근 순</span></h2>
-
-  <div class="card">
-    <h3>스마트폰 터치 기반 작업자 상태 센싱 <span style="font-weight:400;color:var(--muted);font-size:.9rem">(석사 학위논문)</span></h3>
+  <h2>경력 · 프로젝트 <span class="sub">카드를 누르면 자세한 내용이 펼쳐집니다</span></h2>
+  <div class="filters" id="filters" hidden>
+    <div class="chips" role="group" aria-label="분야로 보기">
+      <button type="button" class="fchip on" data-f="all">전체</button>
+      <button type="button" class="fchip" data-f="backend">백엔드 · 서버</button>
+      <button type="button" class="fchip" data-f="ai">AI · 데이터</button>
+      <button type="button" class="fchip" data-f="app">앱 개발</button>
+      <button type="button" class="fchip" data-f="device">IoT · 디바이스</button>
+      <button type="button" class="fchip" data-f="health">헬스케어</button>
+      <button type="button" class="fchip" data-f="design">설계 · 리딩</button>
+    </div>
+    <input type="search" id="q" placeholder="키워드 검색 (예: Kotlin, MQTT, LLM, SSO)" aria-label="키워드 검색">
+    <p class="count" id="cnt" aria-live="polite"></p>
+  </div>
+  <div class="grid">
+  <details class="tile" data-cat="backend design">
+    <summary>
+      <div class="thumb icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M10 40V10h18v30M28 18h10v22M6 40h36"/><path d="M15 16h3M21 16h3M15 23h3M21 23h3M15 30h3M21 30h3M32 25h2M32 31h2"/></svg></div>
+      <div class="tb">
+        <span class="kicker">Enterprise Backend · 4년 2개월</span>
+        <h3>㈜아이티메이트 기술연구소</h3>
+        <p class="when">2020.08 ~ 2024.10 · SW 개발자 → Application Architect</p>
+        <div class="kws"><span class="kw">Java / Spring</span><span class="kw">Oracle</span><span class="kw">SSO</span><span class="kw">레거시 연계</span></div>
+        <span class="more">자세히 보기</span>
+      </div>
+    </summary>
+    <div class="detail">
+    <p class="when">2020.08 ~ 2024.10 (4년 2개월) · 사원 → 대리</p>
+    <p>공공기관·공기업 대상 <b>대규모 통합 ERP 12개 프로젝트</b>를 수행했습니다. <b>4년 내내 직접 코드를 작성한 실무 개발자</b>였고, 후반에는 개발과 함께 고도화 사업의 아키텍처 설계와 프로젝트 관리를 겸했습니다.</p>
+    <ul>
+      <li><b>주요 프로젝트</b> : 한국에너지공단 통합 ERP 구축·운영, 예금보험공사 디지털 혁신시스템 구축, 대한상사중재원 ERP 구축(요구사항 정의·레거시 시스템 연계 설계)</li>
+      <li><b>백엔드 개발 (전 기간)</b> : 예산·회계 등 핵심 업무 모듈을 직접 설계·구현. Java/Spring, MyBatis, Oracle·Tibero 기반. 운영 중단이 허용되지 않는 시스템</li>
+      <li><b>아키텍처 설계 · 프로젝트 관리 (개발 병행)</b> : 고도화 사업의 시스템 구조를 설계하고 일정·이슈를 관리하면서, 핵심 모듈 구현은 계속 직접 수행</li>
+      <li><b>요건을 데이터 구조로</b> : 현업 담당자의 업무를 직접 듣고 시스템 요건과 데이터 항목으로 정리. 기관마다 다른 규정과 운영 방식을 하나의 표준 스키마로 수렴</li>
+      <li><b>제품 표준화 · 품질</b> : 자사 표준 ERP 제품의 표준화와 v2.1 업그레이드 주도, <b>GS인증 1등급</b> 획득</li>
+      <li><b>레거시 연계</b> : 서브원 CST 시스템 SSO 고도화에서 레거시 인증 구조를 파악하고 연계 모듈을 교체. 운영 중 세션·권한이 끊기지 않도록 전환 절차를 먼저 설계</li>
+    </ul>
+    <p class="note">
+      지금의 AI 연구와 이어지는 지점은 <b>데이터가 어떤 형태로 쌓여야 나중에 쓸 수 있는지를 정하는 일</b>입니다.
+      모델을 붙이기 전 단계에서 현업의 언어를 데이터 구조로 옮기고, 그것을 직접 구현해 운영 중인 시스템 위에 얹는 일을 4년간 반복했습니다.
+    </p>
+    <div class="tags">
+      <span class="tag">Java / Spring</span><span class="tag">MyBatis</span><span class="tag">Oracle / Tibero</span><span class="tag">eGovFramework</span>
+      <span class="tag">REST API 설계</span><span class="tag">데이터 모델링</span><span class="tag">아키텍처 설계</span><span class="tag">프로젝트 관리</span>
+      <span class="tag">요구사항 정의</span><span class="tag">SW 품질·표준화</span><span class="tag">SSO</span><span class="tag">Linux / Jenkins / SVN</span>
+    </div>
+    </div>
+  </details>
+  <details class="tile" data-cat="backend">
+    <summary>
+      <div class="thumb icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 8h36v10H6zM6 22h36v10H6z"/><circle cx="12" cy="13" r="1.6"/><circle cx="12" cy="27" r="1.6"/><path d="M20 13h16M20 27h16M24 32v8M14 40h20"/></svg></div>
+      <div class="tb">
+        <span class="kicker">Backend · DevOps</span>
+        <h3>연구실 서버 · 내부 서비스 운영</h3>
+        <p class="when">2026.10 ~ 진행 중 · 서버 담당, 단독 설계·운영</p>
+        <div class="kws"><span class="kw">FastAPI</span><span class="kw">PostgreSQL</span><span class="kw">CI/CD</span><span class="kw">무중단 전환</span></div>
+        <span class="more">자세히 보기</span>
+      </div>
+    </summary>
+    <div class="detail">
+    <p class="when">2026.10 ~ 진행 중 · 연구실 구성원이 실제로 쓰는 서비스 운영 중</p>
+    <p>연구실 서버 담당으로 내부 서비스와 연구 코드를 관리하는 서버 환경을 설계·운영합니다. 그 위에서 구글 시트 스크립트로 돌던 랩미팅 순번 봇을 <b>서버 애플리케이션으로 다시 만들어</b> 운영하고 있습니다.</p>
+    <ul>
+      <li>Slack 봇과 웹이 <b>같은 서비스 계층을 공유</b>하는 구조로 설계, 스키마 변경은 <b>마이그레이션</b>으로 관리</li>
+      <li>CI에서 <b>테스트를 통과해야만 서버에 배포</b>되도록 구성 (컨테이너 기반)</li>
+      <li>기존 봇과 동시 운영이 불가능한 조건에서 <b>회차 사이 빈 기간에 전환</b>하고 즉시 되돌릴 경로를 준비해 무중단 이관</li>
+      <li>배포 전 <b>보안 점검</b>으로 로그인 토큰의 로그 노출과 구성원 명단 노출을 찾아 수정</li>
+      <li>구성원들이 웹 화면을 잘 쓰지 않는 것을 보고 기능 대부분을 <b>매일 쓰는 Slack 안으로 이전</b></li>
+    </ul>
+    <div class="tags">
+      <span class="tag">서버 운영</span><span class="tag">백엔드 개발</span><span class="tag">PostgreSQL</span><span class="tag">DB 마이그레이션</span>
+      <span class="tag">CI/CD</span><span class="tag">Docker</span><span class="tag">무중단 전환</span><span class="tag">보안 점검</span><span class="tag">AI 코딩 도구 활용</span>
+    </div>
+    </div>
+  </details>
+  <details class="tile" data-cat="backend ai health">
+    <summary>
+      <div class="thumb icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 10h32v20H22l-8 7v-7H8z"/><path d="M15 18h18M15 23h12"/></svg></div>
+      <div class="tb">
+        <span class="kicker">LLM Service Backend</span>
+        <h3>임상 협업 LLM 시뮬레이션 시스템</h3>
+        <p class="when">2026.06 ~ 진행 중 · 설계 및 백엔드 단독 구현</p>
+        <div class="kws"><span class="kw">LLM</span><span class="kw">REST API</span><span class="kw">장애 격리</span><span class="kw">Docker</span></div>
+        <span class="more">자세히 보기</span>
+      </div>
+    </summary>
+    <div class="detail">
+    <p class="when">2026.06 ~ 진행 중 · 간호대학 임상 자문진과 공동 연구 · 운영 중</p>
+    <p>기존에 사람이 수행하던 훈련 시나리오를 LLM 시뮬레이션으로 대체하는 시스템입니다. 대화 설계부터 <b>백엔드 전체를 직접 구현</b>해 운영 단계까지 가져갔습니다.</p>
+    <ul>
+      <li>실제 데이터를 근거로 <b>대화 상태를 제어하는 구조</b>와 자동 평가 체계를 설계</li>
+      <li><b>REST API 서버를 도메인별로 모듈화</b>하고 비동기 ORM·마이그레이션으로 다중 DB 지원</li>
+      <li><b>컨테이너화</b>와 외부 연동 서버 <b>장애 격리</b>까지 구성해 실제 연구 과제에 투입</li>
+      <li>음성 입출력, 세션 로깅 등 서비스 인프라 구축</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">LLM 애플리케이션</span><span class="tag">RAG</span><span class="tag">백엔드 개발</span>
+      <span class="tag">REST API 설계</span><span class="tag">DB 마이그레이션</span><span class="tag">Docker</span>
+      <span class="tag">STT / TTS</span><span class="tag">운영</span>
+    </div>
+    </div>
+  </details>
+  <details class="tile" data-cat="app device health">
+    <summary>
+      <div class="thumb"><img src="assets/watch-app.jpg" alt="" loading="lazy"></div>
+      <div class="tb">
+        <span class="kicker">Wearable · Wear OS</span>
+        <h3>갤럭시 워치 생체신호 수집 앱</h3>
+        <p class="when">연구용 · 진행 중 · 단독 개발</p>
+        <div class="kws"><span class="kw">Kotlin</span><span class="kw">생체신호 수집</span><span class="kw">디바이스–서버 연동</span></div>
+        <span class="more">자세히 보기</span>
+      </div>
+    </summary>
+    <div class="detail">
+    <p class="when">연구용 · 진행 중 · Galaxy Watch (Wear OS)</p>
+    <p>연구에 필요한 생체신호를 일상 환경에서 장시간 모으기 위해 갤럭시 워치 앱을 혼자 개발했습니다. 실제 실험에 쓰면서 고치기를 반복해 <b>28차 버전</b>까지 개선했습니다.</p>
+    <ul>
+      <li>화면이 꺼져도 수집이 이어지도록 <b>포그라운드 서비스</b>로 심박·체온·움직임을 장시간 수집 (Samsung Health Sensor SDK)</li>
+      <li>참가자가 손목에서 바로 <b>자세·활동·동석 상태를 기록</b>하고 적용 시점을 함께 남겨, 센서 신호와 상태 라벨을 같은 시간축에 맞추도록 설계</li>
+      <li>수집 데이터를 <b>서버로 전송</b>하는 경로와 <b>기기 상태 확인 화면</b>을 두어 수집 중 이상을 현장에서 바로 확인</li>
+    </ul>
+    <div class="figrow sm">
+      <figure class="fig">
+        <img src="assets/watch-app.jpg" alt="갤럭시 워치 앱의 상태 기록 화면" loading="lazy">
+        <figcaption><b>상태 기록 화면</b> : 자세·활동·동석 상태를 원형 화면에서 바로 고르고, 그 상태가 적용되는 시점을 함께 기록</figcaption>
+      </figure>
+    </div>
+    <div class="tags">
+      <span class="tag">Wear OS</span><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Samsung Health Sensor SDK</span>
+      <span class="tag">포그라운드 서비스</span><span class="tag">디바이스–서버 연동</span><span class="tag">단독 개발</span>
+    </div>
+    </div>
+  </details>
+  <details class="tile" data-cat="ai app health">
+    <summary>
+      <div class="thumb"><img src="assets/android-app.jpg" alt="" loading="lazy"></div>
+      <div class="tb">
+        <span class="kicker">On-device AI · 디지털 바이오마커</span>
+        <h3>스마트폰 터치 기반 상태 센싱</h3>
+        <p class="when">2025.08 ~ · 석사 학위논문 · IEEE TII 제1저자 투고</p>
+        <div class="kws"><span class="kw">행동 데이터 모델링</span><span class="kw">Android 앱</span><span class="kw">온디바이스 추론</span></div>
+        <span class="more">자세히 보기</span>
+      </div>
+    </summary>
+    <div class="detail">
     <p class="when">2025.08 ~ 진행 중 · 제1저자 · IEEE Transactions on Industrial Informatics 투고(심사 중)</p>
     <p>기존 생체신호 센서는 전극 부착과 비용, 착용 부담 때문에 현장에 정착하기 어렵습니다. 이미 손에 있는 <b>상용 스마트폰의 터치스크린</b>을 상태 센서로 쓰는 접근을 제안하고, 실험 설계부터 모델 개발과 배포 검증까지 수행했습니다.</p>
     <ul>
@@ -157,10 +336,20 @@
       <span class="tag">머신러닝</span><span class="tag">설명가능 AI</span><span class="tag">온디바이스 추론</span>
       <span class="tag">논문 작성</span>
     </div>
-  </div>
-
-  <div class="card">
-    <h3>국가 R&amp;D : 지역필수의료 AI 플랫폼 <span style="font-weight:400;color:var(--muted);font-size:.9rem">(참여연구원)</span></h3>
+    </div>
+  </details>
+  <details class="tile" data-cat="ai health design">
+    <summary>
+      <div class="thumb icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 6l15 6v10c0 10-6.5 17-15 20C15.5 39 9 32 9 22V12z"/><path d="M17 24l5 5 9-10"/></svg></div>
+      <div class="tb">
+        <span class="kicker">Healthcare AI · AI Safety</span>
+        <h3>국가 R&amp;D : 지역필수의료 AI 플랫폼</h3>
+        <p class="when">2026.07 ~ 진행 중 · 한국형 ARPA-H 참여연구원</p>
+        <div class="kws"><span class="kw">Agentic AI</span><span class="kw">HITL</span><span class="kw">안전장치 설계</span></div>
+        <span class="more">자세히 보기</span>
+      </div>
+    </summary>
+    <div class="detail">
     <p class="when">2026.07 ~ 진행 중 · 한국형 ARPA-H 프로젝트 · 보건복지부 / 한국보건산업진흥원</p>
     <p>여러 AI 에이전트가 협업하는 의료 플랫폼 과제에 <b>제안서 작성 단계부터</b> 참여하고 있습니다. 사람과 AI가 함께 판단하는 지점의 설계를 맡고 있습니다.</p>
     <ul>
@@ -172,10 +361,20 @@
       <span class="tag">Agentic AI</span><span class="tag">HITL 설계</span><span class="tag">AI 안전성</span>
       <span class="tag">요구사항 규격화</span><span class="tag">산·학·병 협업</span><span class="tag">국가과제</span>
     </div>
-  </div>
-
-  <div class="card">
-    <h3>멀티모달 생체신호 기반 의사소통 보조 솔루션 <span style="font-weight:400;color:var(--muted);font-size:.9rem">(팀 대표)</span></h3>
+    </div>
+  </details>
+  <details class="tile" data-cat="ai health device design">
+    <summary>
+      <div class="thumb"><img src="assets/glimaac-eog.jpg" alt="" loading="lazy"></div>
+      <div class="tb">
+        <span class="kicker">Assistive Tech · 팀 리딩</span>
+        <h3>생체신호 기반 의사소통 보조 솔루션</h3>
+        <p class="when">2026.08 ~ 2026.10 · 팀 대표 · 기술사업화 챌린지 본선</p>
+        <div class="kws"><span class="kw">EOG 생체신호</span><span class="kw">시스템 아키텍처</span><span class="kw">의·공학 협업</span></div>
+        <span class="more">자세히 보기</span>
+      </div>
+    </summary>
+    <div class="detail">
     <p class="when">2026.08 ~ 2026.10 · 2026 연구 아이디어 기술사업화 챌린지 (보건복지부 / 한국보건산업진흥원) · 예선 통과, 본선 1라운드 발표</p>
     <p>말과 타이핑이 어려운 중증 운동장애 환자가 남아 있는 생체신호만으로 대화할 수 있게 하는 솔루션입니다. 공학·의학 4인 팀을 꾸려 <b>대표</b>를 맡았고, 예선을 통과해 본선 1라운드에서 팀 대표로 발표했습니다. 챌린지 이후에도 연구를 이어가 논문으로 정리하고 있습니다.</p>
     <ul>
@@ -198,80 +397,20 @@
       <span class="tag">팀 리딩</span><span class="tag">시스템 아키텍처</span><span class="tag">멀티모달 생체신호</span>
       <span class="tag">경량 딥러닝</span><span class="tag">LLM 응용</span><span class="tag">TTS</span><span class="tag">의·공학 협업</span>
     </div>
-  </div>
-
-  <div class="card">
-    <h3>연구실 서버 · 내부 서비스 운영 <span style="font-weight:400;color:var(--muted);font-size:.9rem">(서버 담당 · 단독 설계·운영)</span></h3>
-    <p class="when">2026.10 ~ 진행 중 · 연구실 구성원이 실제로 쓰는 서비스 운영 중</p>
-    <p>연구실 서버 담당으로 내부 서비스와 연구 코드를 관리하는 서버 환경을 설계·운영합니다. 그 위에서 구글 시트 스크립트로 돌던 랩미팅 순번 봇을 <b>서버 애플리케이션으로 다시 만들어</b> 운영하고 있습니다.</p>
-    <ul>
-      <li>Slack 봇과 웹이 <b>같은 서비스 계층을 공유</b>하는 구조로 설계, 스키마 변경은 <b>마이그레이션</b>으로 관리</li>
-      <li>CI에서 <b>테스트를 통과해야만 서버에 배포</b>되도록 구성 (컨테이너 기반)</li>
-      <li>기존 봇과 동시 운영이 불가능한 조건에서 <b>회차 사이 빈 기간에 전환</b>하고 즉시 되돌릴 경로를 준비해 무중단 이관</li>
-      <li>배포 전 <b>보안 점검</b>으로 로그인 토큰의 로그 노출과 구성원 명단 노출을 찾아 수정</li>
-      <li>구성원들이 웹 화면을 잘 쓰지 않는 것을 보고 기능 대부분을 <b>매일 쓰는 Slack 안으로 이전</b></li>
-    </ul>
-    <div class="tags">
-      <span class="tag">서버 운영</span><span class="tag">백엔드 개발</span><span class="tag">PostgreSQL</span><span class="tag">DB 마이그레이션</span>
-      <span class="tag">CI/CD</span><span class="tag">Docker</span><span class="tag">무중단 전환</span><span class="tag">보안 점검</span><span class="tag">AI 코딩 도구 활용</span>
     </div>
-  </div>
-
-  <div class="card">
-    <h3>임상 협업 LLM 시뮬레이션 시스템<span style="font-weight:400;color:var(--muted);font-size:.9rem">(설계 및 백엔드 구현)</span></h3>
-    <p class="when">2026.06 ~ 진행 중 · 간호대학 임상 자문진과 공동 연구 · 운영 중</p>
-    <p>기존에 사람이 수행하던 훈련 시나리오를 LLM 시뮬레이션으로 대체하는 시스템입니다. 대화 설계부터 <b>백엔드 전체를 직접 구현</b>해 운영 단계까지 가져갔습니다.</p>
-    <ul>
-      <li>실제 데이터를 근거로 <b>대화 상태를 제어하는 구조</b>와 자동 평가 체계를 설계</li>
-      <li><b>REST API 서버를 도메인별로 모듈화</b>하고 비동기 ORM·마이그레이션으로 다중 DB 지원</li>
-      <li><b>컨테이너화</b>와 외부 연동 서버 <b>장애 격리</b>까지 구성해 실제 연구 과제에 투입</li>
-      <li>음성 입출력, 세션 로깅 등 서비스 인프라 구축</li>
-    </ul>
-    <div class="tags">
-      <span class="tag">LLM 애플리케이션</span><span class="tag">RAG</span><span class="tag">백엔드 개발</span>
-      <span class="tag">REST API 설계</span><span class="tag">DB 마이그레이션</span><span class="tag">Docker</span>
-      <span class="tag">STT / TTS</span><span class="tag">운영</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>갤럭시 워치 생체신호 수집 앱 <span style="font-weight:400;color:var(--muted);font-size:.9rem">(Wear OS · 단독 개발)</span></h3>
-    <p class="when">연구용 · 진행 중 · Galaxy Watch (Wear OS)</p>
-    <p>연구에 필요한 생체신호를 일상 환경에서 장시간 모으기 위해 갤럭시 워치 앱을 혼자 개발했습니다. 실제 실험에 쓰면서 고치기를 반복해 <b>28차 버전</b>까지 개선했습니다.</p>
-    <ul>
-      <li>화면이 꺼져도 수집이 이어지도록 <b>포그라운드 서비스</b>로 심박·체온·움직임을 장시간 수집 (Samsung Health Sensor SDK)</li>
-      <li>참가자가 손목에서 바로 <b>자세·활동·동석 상태를 기록</b>하고 적용 시점을 함께 남겨, 센서 신호와 상태 라벨을 같은 시간축에 맞추도록 설계</li>
-      <li>수집 데이터를 <b>서버로 전송</b>하는 경로와 <b>기기 상태 확인 화면</b>을 두어 수집 중 이상을 현장에서 바로 확인</li>
-    </ul>
-    <div class="figrow sm">
-      <figure class="fig">
-        <img src="assets/watch-app.jpg" alt="갤럭시 워치 앱의 상태 기록 화면" loading="lazy">
-        <figcaption><b>상태 기록 화면</b> : 자세·활동·동석 상태를 원형 화면에서 바로 고르고, 그 상태가 적용되는 시점을 함께 기록</figcaption>
-      </figure>
-    </div>
-    <div class="tags">
-      <span class="tag">Wear OS</span><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">Samsung Health Sensor SDK</span>
-      <span class="tag">포그라운드 서비스</span><span class="tag">디바이스–서버 연동</span><span class="tag">단독 개발</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>제조 공정 데이터 분석 AI<span style="font-weight:400;color:var(--muted);font-size:.9rem">(산학협력 연구원)</span></h3>
-    <p class="when">2026.04 ~ 2026.10 · 기업 공동 과제</p>
-    <p>공정 조건과 품질 프로파일의 관계를 예측·역예측하는 과제입니다. 데이터 파이프라인부터 모델링·검증·보고까지 분석 실무를 단독 수행했습니다.</p>
-    <ul>
-      <li>고차원 곡선 출력을 다루기 위한 <b>차원 축소 + 부스팅 파이프라인</b> 구축</li>
-      <li>기존 분석 코드의 <b>전처리 데이터 리키지를 발견·제거</b>하고 성능 기준선을 재확립</li>
-      <li>미보유 장비에 대한 일반화 평가, 데이터 버전·해시 관리로 재현성 확보</li>
-    </ul>
-    <div class="tags">
-      <span class="tag">제조 공정 데이터</span><span class="tag">회귀·최적화</span><span class="tag">Gradient Boosting</span>
-      <span class="tag">차원 축소</span><span class="tag">데이터 품질 검증</span><span class="tag">전이학습</span><span class="tag">재현성 관리</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h3>호흡음 기반 실내 환경 예측 <span style="font-weight:400;color:var(--muted);font-size:.9rem">(개인 연구)</span></h3>
+  </details>
+  <details class="tile" data-cat="device ai">
+    <summary>
+      <div class="thumb"><img src="assets/breath-hw.jpg" alt="" loading="lazy"></div>
+      <div class="tb">
+        <span class="kicker">IoT · Sensor Data</span>
+        <h3>호흡음 기반 실내 환경 예측</h3>
+        <p class="when">2025.03 ~ 2025.10 · 개인 연구 · 학회 제1저자 발표</p>
+        <div class="kws"><span class="kw">MQTT</span><span class="kw">Arduino 센서</span><span class="kw">오디오 AI</span></div>
+        <span class="more">자세히 보기</span>
+      </div>
+    </summary>
+    <div class="detail">
     <p class="when">2025.03 ~ 2025.10 · 제1저자 · 한국재활복지공학회 정기학술대회 포스터 발표</p>
     <p>별도 센서 없이 <b>상용 기기의 내장 마이크</b>로 수집한 호흡음만으로 실내 환경 변수를 역추정할 수 있는지 검증한 탐색 연구입니다.</p>
     <ul>
@@ -293,32 +432,33 @@
       <span class="tag">오디오 AI</span><span class="tag">임베딩 추출</span><span class="tag">시계열 회귀</span>
       <span class="tag">센서·하드웨어 구성</span><span class="tag">MQTT · IoT 연동</span><span class="tag">웹 개발</span><span class="tag">단독 수행</span>
     </div>
-  </div>
-</section>
-
-<section>
-  <h2>경력</h2>
-  <div class="card">
-    <h3>㈜아이티메이트 기술연구소 <span style="font-weight:400;color:var(--muted);font-size:.9rem">(응용SW개발 / Application Architect)</span></h3>
-    <p class="when">2020.08 ~ 2024.10 (4년 2개월) · 사원 → 대리</p>
-    <p>공공기관·공기업 대상 <b>대규모 통합 ERP 12개 프로젝트</b>를 수행했습니다. <b>4년 내내 직접 코드를 작성한 실무 개발자</b>였고, 후반에는 개발과 함께 고도화 사업의 아키텍처 설계와 프로젝트 관리를 겸했습니다.</p>
-    <ul>
-      <li><b>주요 프로젝트</b> : 한국에너지공단 통합 ERP 구축·운영, 예금보험공사 디지털 혁신시스템 구축, 대한상사중재원 통합 ERP 구축</li>
-      <li><b>백엔드 개발 (전 기간)</b> : 예산·회계 등 핵심 업무 모듈을 직접 설계·구현. Java/Spring, MyBatis, Oracle·Tibero 기반. 운영 중단이 허용되지 않는 시스템</li>
-      <li><b>아키텍처 설계 · 프로젝트 관리 (개발 병행)</b> : 고도화 사업의 시스템 구조를 설계하고 일정·이슈를 관리하면서, 핵심 모듈 구현은 계속 직접 수행</li>
-      <li><b>요건을 데이터 구조로</b> : 현업 담당자의 업무를 직접 듣고 시스템 요건과 데이터 항목으로 정리. 기관마다 다른 규정과 운영 방식을 하나의 표준 스키마로 수렴</li>
-      <li><b>제품 표준화 · 품질</b> : 자사 표준 ERP 제품의 표준화와 v2.1 업그레이드 주도, <b>GS인증 1등급</b> 획득</li>
-      <li><b>인증 통합</b> : 서브원 CST 시스템 SSO 고도화</li>
-    </ul>
-    <p class="note">
-      지금의 AI 연구와 이어지는 지점은 <b>데이터가 어떤 형태로 쌓여야 나중에 쓸 수 있는지를 정하는 일</b>입니다.
-      모델을 붙이기 전 단계에서 현업의 언어를 데이터 구조로 옮기고, 그것을 직접 구현해 운영 중인 시스템 위에 얹는 일을 4년간 반복했습니다.
-    </p>
-    <div class="tags">
-      <span class="tag">Java / Spring</span><span class="tag">MyBatis</span><span class="tag">Oracle / Tibero</span><span class="tag">eGovFramework</span>
-      <span class="tag">REST API 설계</span><span class="tag">데이터 모델링</span><span class="tag">아키텍처 설계</span><span class="tag">프로젝트 관리</span>
-      <span class="tag">요구사항 정의</span><span class="tag">SW 품질·표준화</span><span class="tag">SSO</span><span class="tag">Linux / Jenkins / SVN</span>
     </div>
+  </details>
+  <details class="tile" data-cat="ai">
+    <summary>
+      <div class="thumb icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40V8M8 40h32"/><path d="M13 32l7-9 6 5 10-14"/><circle cx="36" cy="14" r="2"/></svg></div>
+      <div class="tb">
+        <span class="kicker">ML · Data Pipeline</span>
+        <h3>제조 공정 데이터 분석 AI</h3>
+        <p class="when">2026.04 ~ 2026.10 · 산학협력 연구원</p>
+        <div class="kws"><span class="kw">데이터 리키지 검출</span><span class="kw">Gradient Boosting</span><span class="kw">재현성 관리</span></div>
+        <span class="more">자세히 보기</span>
+      </div>
+    </summary>
+    <div class="detail">
+    <p class="when">2026.04 ~ 2026.10 · 기업 공동 과제</p>
+    <p>공정 조건과 품질 프로파일의 관계를 예측·역예측하는 과제입니다. 데이터 파이프라인부터 모델링·검증·보고까지 분석 실무를 단독 수행했습니다.</p>
+    <ul>
+      <li>고차원 곡선 출력을 다루기 위한 <b>차원 축소 + 부스팅 파이프라인</b> 구축</li>
+      <li>기존 분석 코드의 <b>전처리 데이터 리키지를 발견·제거</b>하고 성능 기준선을 재확립</li>
+      <li>미보유 장비에 대한 일반화 평가, 데이터 버전·해시 관리로 재현성 확보</li>
+    </ul>
+    <div class="tags">
+      <span class="tag">제조 공정 데이터</span><span class="tag">회귀·최적화</span><span class="tag">Gradient Boosting</span>
+      <span class="tag">차원 축소</span><span class="tag">데이터 품질 검증</span><span class="tag">전이학습</span><span class="tag">재현성 관리</span>
+    </div>
+    </div>
+  </details>
   </div>
 </section>
 
@@ -376,6 +516,26 @@
     a[i].setAttribute('href', 'mai'+'lto:' + e);
   }
 })();
+(function(){
+  var bar=document.getElementById('filters'); if(!bar) return; bar.hidden=false;
+  var tiles=[].slice.call(document.querySelectorAll('details.tile'));
+  var chips=[].slice.call(bar.querySelectorAll('.fchip'));
+  var q=document.getElementById('q'), cnt=document.getElementById('cnt'), f='all';
+  function apply(){
+    var s=q.value.trim().toLowerCase(), n=0;
+    tiles.forEach(function(d){
+      var okC = f==='all' || (' '+d.dataset.cat+' ').indexOf(' '+f+' ')>=0;
+      var okQ = !s || d.textContent.toLowerCase().indexOf(s)>=0;
+      var show=okC&&okQ; d.classList.toggle('hide',!show); if(show) n++;
+    });
+    cnt.textContent = (f==='all'&&!s) ? '' : (n ? n+'개 카드' : '해당하는 카드가 없습니다');
+  }
+  chips.forEach(function(c){ c.addEventListener('click',function(){
+    chips.forEach(function(x){x.classList.remove('on'); x.setAttribute('aria-pressed','false');});
+    c.classList.add('on'); c.setAttribute('aria-pressed','true'); f=c.dataset.f; apply(); }); });
+  q.addEventListener('input',apply);
+})();
+window.addEventListener('beforeprint',function(){document.querySelectorAll('details.tile').forEach(function(d){d.open=true;});});
 </script>
 
 </body>
