@@ -103,7 +103,7 @@
   <p class="meta">
     <span>한양대학교 인공지능학과 석사과정</span><span class="sep">·</span>
     <span>2027년 2월 졸업 예정</span><span class="sep">·</span>
-    <span>前 Application Architect (공공 SI 4년 2개월)</span>
+    <span>前 SW 개발자 · Application Architect (공공기관 ERP 4년 2개월)</span>
   </p>
   <p class="meta" style="margin-top:6px">
     <a class="mail" data-u="hyundongkim" data-h="hanyang" data-t="ac.kr" href="#"></a><noscript>hyundongkim (앳) hanyang 점 ac 점 kr</noscript>
@@ -169,8 +169,8 @@
 
   <div class="card">
     <h3>멀티모달 생체신호 기반 의사소통 보조 솔루션 <span style="font-weight:400;color:var(--muted);font-size:.9rem">(팀 대표)</span></h3>
-    <p class="when">2026.08 ~ 진행 중 · 2026 연구 아이디어 기술사업화 챌린지 (보건복지부 / 한국보건산업진흥원)</p>
-    <p>말과 타이핑이 어려운 중증 운동장애 환자가 남아 있는 생체신호만으로 대화할 수 있게 하는 솔루션입니다. 공학·의학 4인 팀을 꾸려 <b>대표</b>를 맡고 있습니다.</p>
+    <p class="when">2026.08 ~ 2026.10 · 2026 연구 아이디어 기술사업화 챌린지 (보건복지부 / 한국보건산업진흥원) · 예선 통과, 본선 1라운드 발표</p>
+    <p>말과 타이핑이 어려운 중증 운동장애 환자가 남아 있는 생체신호만으로 대화할 수 있게 하는 솔루션입니다. 공학·의학 4인 팀을 꾸려 <b>대표</b>를 맡았고, 예선을 통과해 본선 1라운드에서 팀 대표로 발표했습니다. 챌린지 이후에도 연구를 이어가 논문으로 정리하고 있습니다.</p>
     <ul>
       <li>시스템을 <b>신호–의도 변환부</b>와 <b>의도–발화 생성부</b>로 분리하고 인터페이스 규약을 먼저 확정</li>
       <li>가상 이벤트 생성기를 두어 두 파트가 <b>서로 기다리지 않고 병행 개발</b>하도록 구성</li>
@@ -194,7 +194,24 @@
   </div>
 
   <div class="card">
-    <h3>임상 협업 LLM 시뮬레이션 시스템 <span style="font-weight:400;color:var(--muted);font-size:.9rem">(설계 및 백엔드 구현)</span></h3>
+    <h3>연구실 서버 · 내부 서비스 운영 <span style="font-weight:400;color:var(--muted);font-size:.9rem">(서버 담당 · 단독 설계·운영)</span></h3>
+    <p class="when">2026.10 ~ 진행 중 · 연구실 구성원이 실제로 쓰는 서비스 운영 중</p>
+    <p>연구실 서버 담당으로 내부 서비스와 연구 코드를 관리하는 서버 환경을 설계·운영합니다. 그 위에서 구글 시트 스크립트로 돌던 랩미팅 순번 봇을 <b>서버 애플리케이션으로 다시 만들어</b> 운영하고 있습니다.</p>
+    <ul>
+      <li>Slack 봇과 웹이 <b>같은 서비스 계층을 공유</b>하는 구조로 설계, 스키마 변경은 <b>마이그레이션</b>으로 관리</li>
+      <li>CI에서 <b>테스트를 통과해야만 서버에 배포</b>되도록 구성 (컨테이너 기반)</li>
+      <li>기존 봇과 동시 운영이 불가능한 조건에서 <b>회차 사이 빈 기간에 전환</b>하고 즉시 되돌릴 경로를 준비해 무중단 이관</li>
+      <li>배포 전 <b>보안 점검</b>으로 로그인 토큰의 로그 노출과 구성원 명단 노출을 찾아 수정</li>
+      <li>구성원들이 웹 화면을 잘 쓰지 않는 것을 보고 기능 대부분을 <b>매일 쓰는 Slack 안으로 이전</b></li>
+    </ul>
+    <div class="tags">
+      <span class="tag">서버 운영</span><span class="tag">백엔드 개발</span><span class="tag">PostgreSQL</span><span class="tag">DB 마이그레이션</span>
+      <span class="tag">CI/CD</span><span class="tag">Docker</span><span class="tag">무중단 전환</span><span class="tag">보안 점검</span><span class="tag">AI 코딩 도구 활용</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>임상 협업 LLM 시뮬레이션 시스템<span style="font-weight:400;color:var(--muted);font-size:.9rem">(설계 및 백엔드 구현)</span></h3>
     <p class="when">2026.06 ~ 진행 중 · 간호대학 임상 자문진과 공동 연구 · 운영 중</p>
     <p>기존에 사람이 수행하던 훈련 시나리오를 LLM 시뮬레이션으로 대체하는 시스템입니다. 대화 설계부터 <b>백엔드 전체를 직접 구현</b>해 운영 단계까지 가져갔습니다.</p>
     <ul>
@@ -230,7 +247,7 @@
     <p class="when">2025.03 ~ 2025.10 · 제1저자 · 한국재활복지공학회 정기학술대회 포스터 발표</p>
     <p>별도 센서 없이 <b>상용 기기의 내장 마이크</b>로 수집한 호흡음만으로 실내 환경 변수를 역추정할 수 있는지 검증한 탐색 연구입니다.</p>
     <ul>
-      <li>음향 수집 <b>웹 도구</b>와 환경 측정용 <b>센서 장치를 직접 구성</b>해 동시 수집</li>
+      <li>음향 수집 <b>웹 도구</b>와 환경 측정용 <b>센서 장치를 직접 구성</b>하고, 센서 측정값은 <b>MQTT로 서버에 수집</b>해 음향과 동시 기록</li>
       <li>사전학습 임베딩 기반 특징 추출, 시계열 정렬, 다수 회귀 모델 비교</li>
     </ul>
     <div class="figrow sm">
@@ -240,13 +257,13 @@
       </figure>
       <figure class="fig">
         <img src="assets/breath-hw.jpg" alt="온습도·CO2·미세먼지 센서와 Arduino로 구성한 환경 측정 장치" loading="lazy">
-        <figcaption><b>환경 측정 장치 구성</b> : 온습도·CO₂·미세먼지 센서를 Arduino에 연결해 음향과 동시에 수집</figcaption>
+        <figcaption><b>환경 측정 장치 구성</b> : 온습도·CO₂·미세먼지 센서를 Arduino에 연결하고, 측정값을 MQTT로 서버에 보내 음향과 동시에 수집</figcaption>
       </figure>
     </div>
 
     <div class="tags">
       <span class="tag">오디오 AI</span><span class="tag">임베딩 추출</span><span class="tag">시계열 회귀</span>
-      <span class="tag">센서·하드웨어 구성</span><span class="tag">웹 개발</span><span class="tag">단독 수행</span>
+      <span class="tag">센서·하드웨어 구성</span><span class="tag">MQTT · IoT 연동</span><span class="tag">웹 개발</span><span class="tag">단독 수행</span>
     </div>
   </div>
 </section>
@@ -287,7 +304,7 @@
     <dt>백엔드</dt>
     <dd><span class="tag">FastAPI</span><span class="tag">SQLAlchemy (async)</span><span class="tag">Alembic</span><span class="tag">PostgreSQL</span><span class="tag">Java / Spring</span><span class="tag">REST API 설계</span></dd>
     <dt>인프라 · 협업</dt>
-    <dd><span class="tag">Docker / docker-compose</span><span class="tag">Linux</span><span class="tag">GCP</span><span class="tag">Git</span><span class="tag">생성형 AI 활용 개발</span></dd>
+    <dd><span class="tag">Docker / docker-compose</span><span class="tag">Linux</span><span class="tag">GitLab CI</span><span class="tag">GCP</span><span class="tag">Git</span><span class="tag">MQTT</span><span class="tag">생성형 AI 활용 개발</span></dd>
     <dt>모바일 · 엣지</dt>
     <dd><span class="tag">Kotlin</span><span class="tag">Android</span><span class="tag">Wear OS</span><span class="tag">Jetpack Compose</span><span class="tag">Samsung Health Sensor SDK</span><span class="tag">온디바이스 추론</span></dd>
     <dt>기타</dt>
