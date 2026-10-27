@@ -81,6 +81,8 @@
   .tile summary:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:12px}
   .thumb{height:150px;background:var(--chip);overflow:hidden;display:flex;align-items:center;justify-content:center}
   .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+  .thumb.graph{background:#fff}
+  .thumb.graph img{object-fit:contain;padding:6px}
   .thumb.icon svg{width:62px;height:62px;fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
   .tb{padding:14px 16px 16px;display:flex;flex-direction:column;flex:1}
   .kicker{font-size:.74rem;font-weight:650;color:var(--accent);letter-spacing:.01em;margin-bottom:4px}
@@ -436,7 +438,7 @@
   </details>
   <details class="tile" data-cat="ai">
     <summary>
-      <div class="thumb icon"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 40V8M8 40h32"/><path d="M13 32l7-9 6 5 10-14"/><circle cx="36" cy="14" r="2"/></svg></div>
+      <div class="thumb graph"><img src="assets/paint-profile.jpg" alt="" loading="lazy"></div>
       <div class="tb">
         <span class="kicker">ML · Data Pipeline</span>
         <h3>제조 공정 데이터 분석 AI</h3>
@@ -453,6 +455,10 @@
       <li>기존 분석 코드의 <b>전처리 데이터 리키지를 발견·제거</b>하고 성능 기준선을 재확립</li>
       <li>미보유 장비에 대한 일반화 평가, 데이터 버전·해시 관리로 재현성 확보</li>
     </ul>
+    <figure class="fig" style="max-width:600px">
+      <img src="assets/paint-profile.jpg" alt="위치에 따른 품질 프로파일 곡선을 공정 유량별 색으로 표시한 그래프" loading="lazy">
+      <figcaption><b>품질 프로파일 곡선</b> : 위치(호 길이)에 따른 두께 곡선을 공정 유량별 색으로 표시한 예. 이처럼 곡선 전체가 출력이라 차원 축소로 곡선을 압축한 뒤 부스팅 모델로 예측</figcaption>
+    </figure>
     <div class="tags">
       <span class="tag">제조 공정 데이터</span><span class="tag">회귀·최적화</span><span class="tag">Gradient Boosting</span>
       <span class="tag">차원 축소</span><span class="tag">데이터 품질 검증</span><span class="tag">전이학습</span><span class="tag">재현성 관리</span>
