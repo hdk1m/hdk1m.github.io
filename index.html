@@ -65,8 +65,9 @@
   .figrow .fig figcaption{flex:1}
   .figrow.sm{max-width:540px}
   .figrow.wide{grid-template-columns:2.4fr 1fr}
+  .figrow.narrow-wide{grid-template-columns:1fr 2.6fr}
   .figrow.sm figcaption{font-size:.78rem;padding:7px 11px}
-  @media (max-width:620px){ .figrow,.figrow.wide{grid-template-columns:1fr} .figrow.sm{max-width:100%} }
+  @media (max-width:620px){ .figrow,.figrow.wide,.figrow.narrow-wide{grid-template-columns:1fr} .figrow.sm{max-width:100%} }
   .fig{margin:14px 0 0;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:#fff}
   .fig img{display:block;width:100%;height:auto}
   .fig figcaption{font-size:.82rem;color:var(--muted);padding:9px 13px;
@@ -316,7 +317,7 @@
     </div>
     </div>
   </details>
-  <details data-tech="Kotlin|Android|Wear OS|Jetpack Compose|Samsung Health Sensor SDK|센서 데이터 수집" class="tile" data-cat="app device health">
+  <details data-tech="Kotlin|Android|Wear OS|Jetpack Compose|Samsung Health Sensor SDK|센서 데이터 수집|시계열·신호 분석" class="tile" data-cat="app device health">
     <summary>
       <div class="thumb"><img src="assets/watch-app.jpg" alt="" loading="lazy"></div>
       <div class="tb">
@@ -331,14 +332,19 @@
     <p class="when">연구용 · 진행 중 · Galaxy Watch (Wear OS)</p>
     <p>연구에 필요한 생체신호를 일상 환경에서 장시간 모으기 위해 갤럭시 워치 앱을 혼자 개발했습니다. 실제 실험에 쓰면서 고치기를 반복해 <b>28차 버전</b>까지 개선했습니다.</p>
     <ul>
-      <li>화면이 꺼져도 수집이 이어지도록 <b>포그라운드 서비스</b>로 심박·체온·움직임을 장시간 수집 (Samsung Health Sensor SDK)</li>
+      <li>화면이 꺼져도 수집이 이어지도록 <b>포그라운드 서비스</b>로 심박·피부전도(EDA)·체온·움직임을 장시간 수집 (Samsung Health Sensor SDK)</li>
       <li>참가자가 손목에서 바로 <b>자세·활동·동석 상태를 기록</b>하고 적용 시점을 함께 남겨, 센서 신호와 상태 라벨을 같은 시간축에 맞추도록 설계</li>
       <li>수집 데이터를 <b>서버로 전송</b>하는 경로와 <b>기기 상태 확인 화면</b>을 두어 수집 중 이상을 현장에서 바로 확인</li>
+      <li>모은 데이터로 상태 쌍(졸림·몰입, 앉기·걷기 등)을 구분해 보고, <b>움직임이라는 교란 요인을 통제해도</b> 생체신호의 구분력이 남는지 검증</li>
     </ul>
-    <div class="figrow sm">
+    <div class="figrow narrow-wide">
       <figure class="fig">
         <img src="assets/watch-app.jpg" alt="갤럭시 워치 앱의 상태 기록 화면" loading="lazy">
         <figcaption><b>상태 기록 화면</b> : 자세·활동·동석 상태를 원형 화면에서 바로 고르고, 그 상태가 적용되는 시점을 함께 기록</figcaption>
+      </figure>
+      <figure class="fig">
+        <img src="assets/watch-analysis.png" alt="상태 쌍별 AUROC 막대그래프: 심박·EDA 값만, 움직임 적은 창만, 움직임 잔차 비교" loading="lazy">
+        <figcaption><b>움직임을 통제하면 무엇이 남는가</b> : 워치로 모은 심박·피부전도(EDA)로 상태 쌍을 구분한 AUROC. 원래 값(회색)과 움직임이 적은 구간만 쓴 경우(초록), 움직임 영향을 뺀 잔차(보라)를 비교해 구분력이 움직임 때문인지 확인 (0.5 = 우연 수준)</figcaption>
       </figure>
     </div>
     <div class="tags">
