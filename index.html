@@ -183,7 +183,7 @@
   <h2>한눈에</h2>
   <div class="stats">
     <div class="stat"><span class="n">AI 석사</span><span class="l">한양대 인공지능학과<br>2027.02 졸업 예정</span></div>
-    <div class="stat"><span class="n">국가 R&amp;D</span><span class="l">ARPA-H<br>참여연구원</span></div>
+    <div class="stat"><span class="n">국가 R&amp;D</span><span class="l">ARPA-H CHAIN<br>실무 연구원</span></div>
     <div class="stat"><span class="n">4년 2개월</span><span class="l">SW 개발<br>실무 경력</span></div>
     <div class="stat"><span class="n">12개</span><span class="l">통합 ERP<br>프로젝트 수행</span></div>
   </div>
@@ -289,11 +289,12 @@
       </div>
     </summary>
     <div class="detail">
-    <p class="when">2026.06 ~ 진행 중 · 간호대학 임상 자문진과 공동 연구 · 운영 중</p>
-    <p>기존에 사람이 수행하던 훈련 시나리오를 LLM 시뮬레이션으로 대체하는 시스템입니다. <b>시스템 설계와 백엔드</b>를 맡아 운영 단계까지 가져갔습니다. 임상 연구에 쓰이는 서비스라 AI가 틀린 말을 하면 그대로 잘못된 교육이 되기 때문에, <b>AI 출력을 서버가 다시 확인하고 틀리면 안전하게 물러나는 구조</b>에 공을 들였습니다.</p>
+    <p class="when">2026.06 ~ 진행 중 · 한양대학교 인공지능학과 HY-BPNE Lab · 간호대학 임상 자문진과 공동 연구 · 운영 중</p>
+    <p>기존에 사람이 수행하던 훈련 시나리오를 LLM 시뮬레이션으로 대체하는 시스템입니다. <b>시스템 설계와 백엔드</b>를 맡아 운영 단계까지 가져갔습니다. 임상 연구에 쓰이는 만큼 AI가 그럴듯하지만 틀린 말을 하면 그대로 잘못된 실습이 될 수 있어, <b>엄격한 언어적·비언어적 정보 기록을 통해 임상 전문가가 검토할 수 있는 구조</b>를 만들었습니다.</p>
     <ul>
-      <li><b>슈퍼바이저 에이전트 (tool calling)</b> : 코멘트를 쓰기 전에 교재·학습자 기록·인용을 도구로 직접 확인. 도구 범위는 서버가 정하고, 어떤 근거를 어떤 순서로 찾았는지 연구자 화면에 기록</li>
-      <li><b>AI 연동 허브</b> : 기능마다 대체 공급사·대체 방식을 정해 두어 공급사 한 곳이 멈춰도 서비스가 이어지게 하고, 새 모델은 기능별 시험을 통과해야 운영에 투입</li>
+      <li><b>종합 평가</b> : 대화 내용을 평가 루브릭 기준으로 채점하는 LLM-as-a-Judge 평가에 음성·시선·표정·자세 정보를 함께 분석</li>
+      <li><b>LLM 모듈 분리</b> : 대화 상대인 배우 모듈, 실습 평가자 모듈, 실습 뒤 코멘트를 주는 슈퍼바이저 모듈(교재·학습자 기록을 tool calling으로 확인)로 나눠 적용</li>
+      <li><b>AI 연동 허브</b> : 운영 중 각 모델의 연계 상태를 모니터링하고 교체하기 쉽게 구성. 공급사 한 곳의 연계에 문제가 발생해도 기능별 대체 경로로 서비스가 이어지고, 새 모델은 기능별 시험을 통과해야 운영에 투입</li>
       <li>실제 데이터를 근거로 <b>대화 상태를 제어하는 구조</b>와, 교재 근거·고정 기준표로 면담을 채점하는 평가 에이전트·검색(RAG)을 팀원과 함께 설계</li>
       <li><b>REST API 서버를 도메인별로 모듈화</b>하고 비동기 ORM·마이그레이션으로 다중 DB 지원</li>
       <li><b>컨테이너화</b>와 외부 연동 서버 <b>장애 격리</b>까지 구성해 실제 연구 과제에 투입</li>
@@ -373,8 +374,8 @@
     <p>기존 생체신호 센서는 전극 부착과 비용, 착용 부담 때문에 현장에 정착하기 어렵습니다. 이미 손에 있는 <b>상용 스마트폰의 터치스크린</b>을 상태 센서로 쓰는 접근을 제안하고, 실험 설계부터 모델 개발과 배포 검증까지 수행했습니다.</p>
     <ul>
       <li>데이터 수집용 <b>스마트폰 터치 과제 앱(Java · Kotlin)을 공동으로 고도화</b>하고 통제된 실험 프로토콜을 설계</li>
-      <li>피험자 독립 교차검증으로 <b>처음 보는 사용자에게도 일반화</b>되는지 평가</li>
-      <li>단말에서 직접 추론하도록 구성해 <b>지연 시간·개인정보·인구통계 안정성</b>을 함께 검증</li>
+      <li>성능이 좋은 과제를 고르는 데서 멈추지 않고 원인을 분석해, 터치 센서 데이터를 <b>상지 운동 상태의 디지털 바이오마커</b>로 해석 : 서로 다른 움직임(짧게 두드리기·길게 끌기)을 함께 담은 조합이 가장 좋다는 해석을 분류 모델·정규화 방식 18가지 조건에서 검증</li>
+      <li>과제 하나만 쓸 때보다 정확도(macro-F1)가 <b>0.718에서 0.855</b>로 향상. 약 2분의 터치 과제가 끝나면 <b>스마트폰 안에서 1초 이내</b>에 결과 계산</li>
     </ul>
     <figure class="fig">
       <img src="assets/fatigue-protocol.jpg" alt="실험 프로토콜 : 스마트폰 터치 과제와 피로 유발 절차를 번갈아 반복" loading="lazy">
@@ -398,28 +399,30 @@
     <summary>
       <div class="thumb"><img src="assets/arpah-kickoff.jpg" alt="" loading="lazy"></div>
       <div class="tb">
-        <span class="kicker">Healthcare AI · AI Safety</span>
-        <h3>국가 R&amp;D : 지역필수의료 AI 플랫폼</h3>
-        <p class="when">2026.07 ~ 진행 중 · 한국형 ARPA-H 참여연구원</p>
-        <div class="kws"><span class="kw">Agentic AI</span><span class="kw">HITL</span><span class="kw">안전장치 설계</span></div>
+        <span class="kicker">Healthcare AI · HITL UX</span>
+        <h3>국가 R&amp;D CHAIN : 병원 EHR + AI 오케스트레이터</h3>
+        <p class="when">2026.07 ~ 진행 중 · 한국형 ARPA-H 실무 연구원 (HITL UX 계층)</p>
+        <div class="kws"><span class="kw">EHR 연계</span><span class="kw">HITL</span><span class="kw">임상 HCI</span></div>
         <span class="more">자세히 보기</span>
       </div>
     </summary>
     <div class="detail">
     <p class="when">2026.07 ~ 진행 중 · 한국형 ARPA-H 프로젝트 · 보건복지부 / 한국보건산업진흥원</p>
-    <p>여러 AI 에이전트가 협업하는 의료 플랫폼 과제에 <b>제안서 작성 단계부터</b> 참여하고 있습니다. 사람과 AI가 함께 판단하는 지점의 설계를 맡고 있습니다.</p>
+    <p>한양대학교병원과 컨소시엄 지역 병원의 <b>기존 EHR에 AI 오케스트레이터를 더하는 과제</b>에 제안서 작성 단계부터 참여하고 있습니다. 뇌졸중 선별, 임상 요약, 영상·혈전용해 근거를 내는 여러 AI 에이전트의 결과를 응급실·신경과 의료진이 기존 EHR 흐름 안에서 확인하고 결정하는 <b>HITL UX 계층</b>을 맡고 있습니다. 보기 좋은 화면보다 <b>바쁜 응급 상황에서도 의료진이 쓰고 싶고, 병원 시스템에 오래 정착할 수 있는 구조</b>를 목표로 합니다.</p>
     <ul>
-      <li><b>HITL(Human-in-the-Loop) 인터페이스</b>와 사용자 기반 데이터 규격 정의</li>
-      <li><b>Safety layer의 interaction specification</b> 설계 : 안전 기준을 벗어날 때 사람에게 넘기는 방식</li>
-      <li>병원 임상팀 및 컨소시엄 참여 기업과 협업</li>
+      <li>의료정보팀이 확인해 준 <b>제한된 레거시 연계 조건</b> 안에서 EHR을 고치지 않는 최소 연계를 기본으로 설계</li>
+      <li><b>알림 피로도와 신규 시스템 학습 마찰</b>을 고려해, 사람이 AI를 돕는 구조 대신 의료진에게 실제로 이득이 되는 기능을 임상 흐름 안에 배치</li>
+      <li>중복 작업 없이 트래킹할 수 있는 단계는 자동으로 진행하고, <b>의료진의 판단 기록이 필요한 경우에만 근거</b>를 남기도록 설계</li>
+      <li>의료진, 병원 의료정보팀, 컨소시엄 임상 명세·보안 실무그룹과 참여 기업, 다른 연구팀과 <b>회의마다 바뀌는 시나리오와 명세를 조율</b>하며 여러 판의 시안에 반영</li>
+      <li>사용성 연구 도구(조작 기록·설문·시선 추적)를 만들어 운영하고, <b>채택에서 일상 사용까지의 단계별 지표와 사용성 평가 지표</b>를 제안</li>
     </ul>
     <figure class="fig" style="max-width:640px">
       <img src="assets/arpah-kickoff.jpg" alt="의료 Agentic AI 오케스트레이션 플랫폼 개발 및 다기관 실증 과제 착수 회의 단체 사진" loading="lazy">
       <figcaption><b>과제 착수 회의 (Kick-off)</b> : 의료 Agentic AI 오케스트레이션 플랫폼 개발 및 다기관 실증 과제의 컨소시엄 참여 기관이 함께한 착수 회의 (사진 출처: <a href="https://www.whosaeng.com/174132" target="_blank" rel="noopener">후생신보</a>)</figcaption>
     </figure>
     <div class="tags">
-      <span class="tag">Agentic AI</span><span class="tag">HITL 설계</span><span class="tag">AI 안전성</span>
-      <span class="tag">요구사항 규격화</span><span class="tag">산·학·병 협업</span><span class="tag">국가과제</span>
+      <span class="tag">Agentic AI</span><span class="tag">HITL 설계</span><span class="tag">EHR 연계</span><span class="tag">임상 HCI</span>
+      <span class="tag">사용성 평가</span><span class="tag">산·학·병 협업</span><span class="tag">국가과제</span>
     </div>
     </div>
   </details>
@@ -546,7 +549,7 @@
     <li><span class="k">학위논문</span><span class="v">Smartphone Touch as a Digital Motor Biomarker : 석사 학위논문 (2027.02 학위 취득 예정)</span></li>
     <li><span class="k">학술대회</span><span class="v">대한의용생체공학회 2026 춘계학술대회 : 제1저자 포스터 발표</span></li>
     <li><span class="k">학술대회</span><span class="v">2025 제19회 한국재활복지공학회 정기학술대회 : 제1저자 포스터 발표</span></li>
-    <li><span class="k">국가 R&amp;D</span><span class="v">한국형 ARPA-H 프로젝트 참여연구원 (2026.07 ~)</span></li>
+    <li><span class="k">국가 R&amp;D</span><span class="v">한국형 ARPA-H CHAIN 과제 실무 연구원 (2026.07 ~)</span></li>
     <li><span class="k">학력</span><span class="v">한양대학교 인공지능학과 석사과정 (2025.03 ~ 2027.02 예정)</span></li>
     <li><span class="k">자격 · 어학</span><span class="v">정보처리기사 · SQLD · OPIc IM1</span></li>
   </ul>
