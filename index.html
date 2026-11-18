@@ -256,13 +256,13 @@
       <div class="tb">
         <span class="kicker">Backend · DevOps</span>
         <h3>연구실 서버 · 내부/외부 서비스 운영</h3>
-        <p class="when">2026.10 ~ 진행 중 · 서버 담당, 단독 설계·운영</p>
+        <p class="when">2026.01 ~ 진행 중 · 서버 담당, 단독 설계·운영</p>
         <div class="kws"><span class="kw">FastAPI</span><span class="kw">PostgreSQL</span><span class="kw">CI/CD</span><span class="kw">무중단 전환</span></div>
         <span class="more">자세히 보기</span>
       </div>
     </summary>
     <div class="detail">
-    <p class="when">2026.10 ~ 진행 중 · 연구실 구성원이 실제로 쓰는 서비스 운영 중</p>
+    <p class="when">2026.01 ~ 진행 중 · 연구실 구성원이 실제로 쓰는 서비스 운영 중</p>
     <p>연구실 서버 담당으로 <b>Slack 봇, 프로젝트 데모 사이트(비언어적 문맥 파악 챗봇, ARPA-H HITL), 워치 데이터 대시보드, GitLab</b> 등 내부·외부 서비스를 설계·개발·운영합니다. 그중 구글 시트 스크립트로 돌던 랩미팅 순번 봇은 <b>서버 애플리케이션으로 다시 만들어</b> 운영하고 있습니다.</p>
     <ul>
       <li>Slack 봇과 웹이 <b>같은 서비스 계층을 공유</b>하는 구조로 설계, 스키마 변경은 <b>마이그레이션</b>으로 관리</li>
@@ -277,22 +277,24 @@
     </div>
     </div>
   </details>
-  <details data-tech="Python|FastAPI|SQLAlchemy|Alembic|REST API 설계|Docker|Git|LLM 애플리케이션|RAG|프롬프트·상태 제어 설계" class="tile" data-cat="backend ai health">
+  <details data-tech="Python|FastAPI|SQLAlchemy|Alembic|REST API 설계|Docker|Git|LLM 애플리케이션|AI 에이전트|Tool calling|RAG|프롬프트·상태 제어 설계" class="tile" data-cat="backend ai health">
     <summary>
       <div class="thumb"><img src="assets/clinical-llm.jpg" alt="" loading="lazy"></div>
       <div class="tb">
         <span class="kicker">LLM Service Backend</span>
         <h3>임상 협업 LLM 시뮬레이션 시스템</h3>
-        <p class="when">2026.06 ~ 진행 중 · 설계 및 백엔드 단독 구현</p>
-        <div class="kws"><span class="kw">LLM</span><span class="kw">REST API</span><span class="kw">장애 격리</span><span class="kw">Docker</span></div>
+        <p class="when">2026.06 ~ 진행 중 · 시스템 설계 · 백엔드 개발·운영</p>
+        <div class="kws"><span class="kw">AI 에이전트</span><span class="kw">Tool calling</span><span class="kw">장애 격리</span><span class="kw">Docker</span></div>
         <span class="more">자세히 보기</span>
       </div>
     </summary>
     <div class="detail">
     <p class="when">2026.06 ~ 진행 중 · 간호대학 임상 자문진과 공동 연구 · 운영 중</p>
-    <p>기존에 사람이 수행하던 훈련 시나리오를 LLM 시뮬레이션으로 대체하는 시스템입니다. 대화 설계부터 <b>백엔드 전체를 직접 구현</b>해 운영 단계까지 가져갔습니다.</p>
+    <p>기존에 사람이 수행하던 훈련 시나리오를 LLM 시뮬레이션으로 대체하는 시스템입니다. <b>시스템 설계와 백엔드</b>를 맡아 운영 단계까지 가져갔습니다. 임상 연구에 쓰이는 서비스라 AI가 틀린 말을 하면 그대로 잘못된 교육이 되기 때문에, <b>AI 출력을 서버가 다시 확인하고 틀리면 안전하게 물러나는 구조</b>에 공을 들였습니다.</p>
     <ul>
-      <li>실제 데이터를 근거로 <b>대화 상태를 제어하는 구조</b>와 자동 평가 체계를 설계</li>
+      <li><b>슈퍼바이저 에이전트 (tool calling)</b> : 코멘트를 쓰기 전에 교재·학습자 기록·인용을 도구로 직접 확인. 도구 범위는 서버가 정하고, 어떤 근거를 어떤 순서로 찾았는지 연구자 화면에 기록</li>
+      <li><b>AI 연동 허브</b> : 기능마다 대체 공급사·대체 방식을 정해 두어 공급사 한 곳이 멈춰도 서비스가 이어지게 하고, 새 모델은 기능별 시험을 통과해야 운영에 투입</li>
+      <li>실제 데이터를 근거로 <b>대화 상태를 제어하는 구조</b>와, 교재 근거·고정 기준표로 면담을 채점하는 평가 에이전트·검색(RAG)을 팀원과 함께 설계</li>
       <li><b>REST API 서버를 도메인별로 모듈화</b>하고 비동기 ORM·마이그레이션으로 다중 DB 지원</li>
       <li><b>컨테이너화</b>와 외부 연동 서버 <b>장애 격리</b>까지 구성해 실제 연구 과제에 투입</li>
       <li>음성 입출력, 세션 로깅 등 서비스 인프라 구축</li>
@@ -300,7 +302,7 @@
     </ul>
     <figure class="fig" style="max-width:640px">
       <img src="assets/clinical-llm.jpg" alt="임상 협업 LLM 시뮬레이션 시스템의 이론학습 화면" loading="lazy">
-      <figcaption><b>서비스 화면 (이론학습)</b> : 모듈별 레슨·퀴즈 진행률을 관리하고, 실습학습(LLM 대화 시뮬레이션)과 학습 기록으로 이어지는 구조. 화면 뒤의 API 서버와 DB를 단독으로 설계·구현</figcaption>
+      <figcaption><b>서비스 화면 (이론학습)</b> : 모듈별 레슨·퀴즈 진행률을 관리하고, 실습학습(LLM 대화 시뮬레이션)과 학습 기록으로 이어지는 구조. 화면 뒤의 API 서버와 DB를 설계·구현</figcaption>
     </figure>
     <div class="figrow wide">
       <figure class="fig">
@@ -313,7 +315,7 @@
       </figure>
     </div>
     <div class="tags">
-      <span class="tag">LLM 애플리케이션</span><span class="tag">RAG</span><span class="tag">백엔드 개발</span>
+      <span class="tag">LLM 애플리케이션</span><span class="tag">AI 에이전트</span><span class="tag">Tool calling</span><span class="tag">RAG</span><span class="tag">백엔드 개발</span>
       <span class="tag">REST API 설계</span><span class="tag">DB 마이그레이션</span><span class="tag">Docker</span>
       <span class="tag">STT / TTS</span><span class="tag">운영</span>
     </div>
